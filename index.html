@@ -120,6 +120,13 @@ table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:ta
 th,td{text-align:left;padding:8px 12px;border-top:1px solid var(--line)}
 th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
 .tablewrap{overflow-x:auto}
+.dayhero{border-left:4px solid var(--dc,var(--accent));padding:4px 16px 6px}
+.dayhero img{width:100%;display:block;border-radius:10px;aspect-ratio:3/1.6;object-fit:cover}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gallery figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  overflow:hidden;box-shadow:var(--shadow)}
+.gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.gallery figcaption{font-size:12px;font-weight:700;padding:6px 10px}
 .plancard{margin-bottom:12px}
 .planhead{padding:13px 16px 8px;border-left:4px solid var(--pc,var(--accent))}
 .planhead .p-name{font-size:16px;font-weight:800}
@@ -194,6 +201,7 @@ th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
     <div class="d-title">新千歳 → 富良野へ</div>
     <span class="d-stay">泊:富良野</span>
   </div>
+  <div class="dayhero"><img src="images/02-ningle.jpg" alt="ニングルテラスのイメージ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-time">13:35</div><div class="tl-what"><b>新千歳空港 着</b>(NH63)<div class="tl-sub">レンタカー受け取り(送迎バス込みで〜30分見ておく)</div></div></div>
     <div class="tl-row tl-move"><div class="tl-time">14:30</div><div class="tl-what">🚗 道東道・占冠IC経由で富良野へ(約3時間)。途中、道の駅で休憩</div></div>
@@ -209,6 +217,7 @@ th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
     <div class="d-title">美瑛観光 → 夜は札幌</div>
     <span class="d-stay">泊:札幌</span>
   </div>
+  <div class="dayhero"><img src="images/01-aoiike.jpg" alt="青い池のイメージ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-time">8:30</div><div class="tl-what"><b>ホテル出発</b></div></div>
     <div class="tl-row"><div class="tl-time">9:00</div><div class="tl-what"><b>青い池</b> <a class="map" href="https://www.google.com/maps/search/青い池+美瑛" target="_blank" rel="noopener">地図</a><div class="tl-sub">午前が空いていて水面もきれい。駐車場 普通車¥1,000。近くの白ひげの滝もセットで</div></div></div>
@@ -229,6 +238,7 @@ th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
     <div class="d-title">ニセコ → 神威岬 → 小樽 ぐるっと一周</div>
     <span class="d-stay">泊:札幌</span>
   </div>
+  <div class="dayhero"><img src="images/08-kamui.jpg" alt="神威岬のイメージ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-time">8:00</div><div class="tl-what"><b>札幌出発</b>(国道230号・中山峠ルート)<div class="tl-sub">この日は走行距離が長いので早めスタートが吉</div></div></div>
     <div class="tl-row"><div class="tl-time">9:30</div><div class="tl-what"><b>きのこ王国 喜茂別店</b>で休憩 <a class="map" href="https://www.google.com/maps/search/きのこ王国+喜茂別店" target="_blank" rel="noopener">地図</a><div class="tl-sub">名物きのこ汁 約¥100。ルート上なので立ち寄りやすい</div></div></div>
@@ -249,6 +259,7 @@ th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
     <div class="d-title">札幌グルメ → 帰路</div>
     <span class="d-stay">20:30 CTS発</span>
   </div>
+  <div class="dayhero"><img src="images/11-sushi.jpg" alt="回転寿司のイメージ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-time">9:30</div><div class="tl-what"><b>チェックアウト → 円山エリアへ</b><div class="tl-sub">時間があれば北海道神宮・円山公園を散歩</div></div></div>
     <div class="tl-row"><div class="tl-time">11:00</div><div class="tl-what"><b>回転寿し トリトン 円山店</b>(開店直後が狙い目)<a class="map" href="https://www.google.com/maps/search/回転寿しトリトン+円山店" target="_blank" rel="noopener">地図</a><div class="tl-sub">予約不可。公式LINEで待ち状況を確認できる</div></div></div>
@@ -385,6 +396,23 @@ th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
 
 <!-- ══════════ スポット ══════════ -->
 <section id="spots">
+
+<h2>イメージギャラリー</h2>
+<div class="gallery">
+  <figure><img src="images/01-aoiike.jpg" alt="青い池" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>青い池</figcaption></figure>
+  <figure><img src="images/02-ningle.jpg" alt="ニングルテラス" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>ニングルテラス</figcaption></figure>
+  <figure><img src="images/03-rakuno.jpg" alt="美瑛放牧酪農場" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>美瑛放牧酪農場</figcaption></figure>
+  <figure><img src="images/04-hitsuji.jpg" alt="ひつじの丘ジンギスカン" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>ひつじの丘ジンギスカン</figcaption></figure>
+  <figure><img src="images/05-ramen.jpg" alt="札幌味噌ラーメン" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>札幌味噌ラーメン</figcaption></figure>
+  <figure><img src="images/06-moiwa.jpg" alt="藻岩山の夜景" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>藻岩山の夜景</figcaption></figure>
+  <figure><img src="images/07-shinsen.jpg" alt="神仙沼" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>神仙沼</figcaption></figure>
+  <figure><img src="images/08-kamui.jpg" alt="神威岬" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>神威岬</figcaption></figure>
+  <figure><img src="images/09-kinoko.jpg" alt="きのこ汁" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>きのこ汁</figcaption></figure>
+  <figure><img src="images/10-otaru.jpg" alt="小樽運河" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>小樽運河</figcaption></figure>
+  <figure><img src="images/11-sushi.jpg" alt="回転寿司" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>回転寿司</figcaption></figure>
+  <figure><img src="images/12-sweets.jpg" alt="クレープとソフトクリーム" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>クレープ&ソフト</figcaption></figure>
+</div>
+<p style="font-size:11px;color:var(--sub);margin:8px 0 0">※画像はAI生成のイメージです。実際の店舗・景観とは異なります</p>
 
 <h2><span class="chip" style="background:var(--d1-soft);color:var(--d1)">美瑛・富良野</span></h2>
 <div class="card"><ul class="plain">

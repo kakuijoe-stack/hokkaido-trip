@@ -1,0 +1,12 @@
+01-aoiike.jpg 青い池
+02-ningle.jpg ニングルテラス
+03-rakuno.jpg 美瑛放牧酪農場
+04-hitsuji.jpg ひつじの丘
+05-ramen.jpg 味噌ラーメン
+06-moiwa.jpg 藻岩山夜景
+07-shinsen.jpg 神仙沼
+08-kamui.jpg 神威岬
+09-kinoko.jpg きのこ汁
+10-otaru.jpg 小樽運河
+11-sushi.jpg 回転寿司
+12-sweets.jpg クレープとソフト
