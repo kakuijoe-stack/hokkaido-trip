@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2C7DA0">
+<title>ホテル候補リスト</title>
+<style>
+:root{--bg:#F4F7F8;--card:#FFFFFF;--ink:#20303A;--sub:#5D6E78;--line:#DCE4E8;
+--accent:#2C7DA0;--accent-soft:#E3EEF4;--warn-bg:#FBF1E6;--warn-ink:#8A5A1E;--warn-line:#EAD3B4;
+--d1:#7C6BAF;--d1-soft:#EEEAF7;--d2:#2C7DA0;--d2-soft:#E3EEF4;--d3:#4A7C59;--d3-soft:#E7F1EA;
+--d4:#A85B32;--d4-soft:#F7EBE3;--shadow:0 1px 3px rgba(32,48,58,.08)}
+@media (prefers-color-scheme: dark){:root{--bg:#141B20;--card:#1D262C;--ink:#E4EBEF;--sub:#93A4AE;
+--line:#31404A;--accent:#5FA8C7;--accent-soft:#22333D;--warn-bg:#332818;--warn-ink:#E4B877;--warn-line:#4D3D22;
+--d1:#A695D6;--d1-soft:#2A2438;--d2:#5FA8C7;--d2-soft:#1E313C;--d3:#7FAF8E;--d3-soft:#22312A;
+--d4:#D08A5E;--d4-soft:#38291F;--shadow:0 1px 3px rgba(0,0,0,.3)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;
+font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 80px}
+header{padding:26px 0 6px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+h1{margin:4px 0 2px;font-size:24px;font-weight:800;text-wrap:balance}
+.lead{color:var(--sub);font-size:13px}
+a.back{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;
+border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+h2{font-size:15px;font-weight:800;margin:28px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .chip{font-size:11px;padding:2px 10px;border-radius:999px;font-weight:700;background:var(--cs);color:var(--c)}
+.item{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c,var(--accent));
+border-radius:12px;box-shadow:var(--shadow);padding:13px 16px;margin-bottom:10px}
+.i-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.i-name{font-size:15px;font-weight:800}
+a.map{color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}
+.i-meta{font-size:12px;color:var(--sub);margin-top:2px}
+.i-why{font-size:13px;margin:8px 0 6px}
+.i-rows{font-size:12px;color:var(--sub);display:grid;gap:2px}
+.i-rows b{color:var(--ink);font-weight:700}
+.i-fit{margin-top:7px;font-size:12px;font-weight:700;color:var(--c,var(--accent));
+background:var(--cs,var(--accent-soft));border-radius:8px;padding:4px 10px;display:inline-block}
+.i-caution{margin-top:7px;font-size:12px;color:var(--warn-ink);background:var(--warn-bg);
+border:1px solid var(--warn-line);border-radius:8px;padding:4px 10px}
+.notes{font-size:12px;color:var(--sub);background:var(--card);border:1px dashed var(--line);
+border-radius:10px;padding:10px 14px;margin-top:4px}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);
+border-radius:10px;padding:10px 14px;font-size:13px;margin:14px 0}
+.src{margin:30px 0 0;font-size:11px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="eyebrow">HOKKAIDO 2026.8.30 - 9.2</div>
+<h1>ホテル候補リスト</h1>
+<div class="lead">エージェントチーム調査による宿候補28件(エリア別・価格帯別)</div>
+<a class="back" href="index.html">← 旅のしおりに戻る</a>
+</header>
+<div class="warn"><b>「ぽらりす」について重要なお知らせ:</b>奈央さんのリストにあった★4.9の宿「ぽらりす」は、調査の結果<b>富良野・美瑛ではなく道東・弟子屈町(摩周湖の近く)の星空ペンション</b>と判明しました。富良野から車で約3.5〜4時間のため今回の行程には組み込めません(素敵な宿なので次回の道東旅行の候補に!)。代わりに下の富良野・美瑛の宿から選ぶのがおすすめです。</div><h2 style="--c:var(--d1);--cs:var(--d1-soft)"><span class="chip">富良野・美瑛(8/30の1泊)</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">【要注意・特定結果】ペンション ぽらりす(Pension Polaris)</span><a class="map" href="https://www.google.com/maps/search/【要注意・特定結果】ペンション+ぽらりす" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">北海道川上郡弟子屈町(摩周湖・屈斜路湖エリア=道東)※富良野・美瑛ではない · ペンション(Googleマップでは自動付与の「1つ星ホテル」表記) · 2名2〜3万円前後(2食付)要確認 · Google★4.9前後・口コミ100件超(JTB等でも満点近い高評価)</div>
+<p class="i-why">★4.9・口コミ約127件の「ぽらりす」は、星空案内人資格を持つオーナーが天体観測を案内してくれる1日3組限定の星空ペンションで、所在地は摩周湖近く(JR摩周駅から車約10分)。富良野・美瑛エリアの施設ではありません。おそらく地図検索時に道東の同宿がヒットしたものと推定。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料あり</div><div><b>温泉・風呂:</b> 温泉なし(星空観察がメイン)</div><div><b>食事:</b> 夕朝食付プランあり・手作りデザートが名物</div></div>
+<div class="i-fit">▶ 今回の行程(富良野→美瑛→札幌方面)には不適合。富良野から車で約3.5〜4時間離れており8/30泊の候補からは除外を推奨</div><div class="i-caution">⚠ 同名施設が富良野・美瑛に存在しないことは観光協会一覧・各予約サイトで確認済み。もし別の「ぽらりす」を見つけた場合はURLの共有を</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">新富良野プリンスホテル</span><a class="map" href="https://www.google.com/maps/search/新富良野プリンスホテル" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野市中御料(富良野スキー場麓) · リゾートホテル · 2名1泊 素泊まり2万円台〜、8月末の週末は3〜5万円想定(公式最安表示は14,938円〜だが夏季は高め) · Tripadvisor富良野13軒中2位・約990件。じゃらん/楽天も4.2前後(要確認)</div>
+<p class="i-why">ニングルテラスがホテル敷地内にあり、夜のライトアップを徒歩0分で楽しめる唯一の宿。風のガーデン、珈琲「森の時計」も敷地内でカップルの夜の散策に最適。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料・広い</div><div><b>温泉・風呂:</b> 紫彩の湯(温泉・露天風呂あり、宿泊者割引)</div><div><b>食事:</b> 朝食ビュッフェ付プランが定番。夕食はホテル内レストランやニングルテラス隣の「森の時計」等</div></div>
+<div class="i-fit">▶ 現行プランの8/30富良野泊に最有力。空港から約2.5時間で17時前後着→夜ニングルテラス。翌朝美瑛へは車で約1時間</div><div class="i-caution">⚠ 建物・客室はやや年季あり。夏季は観光客が多く夕食会場は混雑しがち</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">FURANO NATULUX HOTEL(富良野ナチュラクスホテル)</span><a class="map" href="https://www.google.com/maps/search/FURANO+NATULUX+HOTEL" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野市朝日町(JR富良野駅前) · デザインホテル · 2名1泊 朝食付2.5〜3.5万円程度(8月ハイシーズン) · じゃらん4.3前後の高評価(検索で出た楽天2.99は誤表示の可能性大・要確認)</div>
+<p class="i-why">モダンでスタイリッシュな内装で記念日・カップル利用を公式に打ち出すホテル。駅前立地で夕食の選択肢が多いのが強み。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 光明石温泉(人工)の大浴場+サウナあり(浴室にジャズが流れる)</div><div><b>食事:</b> 朝食付が基本。夕食は駅前の「唯我独尊(カレー)」「くまげら」など富良野グルメを徒歩圏で</div></div>
+<div class="i-fit">▶ 8/30富良野泊。ニングルテラスへは車で約10分(夜のライトアップに行きやすい)。翌朝美瑛へは国道237号で約50分</div><div class="i-caution">⚠ 大浴場は天然温泉ではない。駅前なのでリゾート感は控えめ</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ホテルナトゥールヴァルト富良野</span><a class="map" href="https://www.google.com/maps/search/ホテルナトゥールヴァルト富良野" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野市北の峰町(スキー場エリア、新富良野プリンスの近く) · カジュアルリゾートホテル · 2名1泊 朝食付22,638円〜/2食付29,106円〜(税込・JTB掲載値)。8月末は2万台後半〜想定 · じゃらん・楽天とも4.3〜4.5前後の高評価(サービス系口コミが強い)要確認</div>
+<p class="i-why">「カップル・ご夫婦の過ごし方」ページを持つほど2人旅向けサービスが充実(ウェルカムドリンク、貸出品多数、スタッフのホスピタリティ評価が高い)。コスパ重視ならここ。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 大浴場あり(光明石の人工温泉)</div><div><b>食事:</b> 焼きたてパンが名物の朝食ビュッフェが看板。2食付プランあり</div></div>
+<div class="i-fit">▶ 8/30富良野泊。ニングルテラスまで車約5分/徒歩圏ギリギリ。翌朝美瑛へ約1時間</div><div class="i-caution">⚠ ファミリー利用も多く、時期により子ども連れで賑やかな場合あり</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">SPA&amp;HOTEL RESORT ふらのラテール</span><a class="map" href="https://www.google.com/maps/search/SPA&amp;HOTEL+RESORT+ふらのラテール" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">空知郡中富良野町(ファーム富田まで車約5分) · 温泉スパリゾートホテル · 2名1泊 素泊まり約1万円〜/朝食付1.2万円〜/2食付1.9万円〜。〜2万円帯の筆頭 · 口コミ4.4前後(だれどこ等)要確認</div>
+<p class="i-why">この価格で本格温泉+露天からの十勝岳ビューが得られるコスパ宿。中富良野なので富良野市街と美瑛の中間に位置し移動効率が良い。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 天然温泉。十勝岳連峰を一望する露天風呂(日帰り入浴も営業)</div><div><b>食事:</b> 北海道食材の和朝食が好評。2食付プランあり</div></div>
+<div class="i-fit">▶ 8/30泊に好適。ニングルテラスへ車約15分。翌朝の美瑛(パッチワークの路・青い池)へは40〜50分と富良野市街泊より近い</div><div class="i-caution">⚠ 日帰り温泉併設のため日中〜夕方は浴場がやや混む。建物は昔ながらの温泉ホテル感</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">フラノ寶亭留(FURANO HOTERIER)</span><a class="map" href="https://www.google.com/maps/search/フラノ寶亭留" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野市学田三区(富良野市街から車約10分の丘の上) · スモールラグジュアリーホテル(全25室) · 2名1泊2食付 38,486円〜(JTB掲載値)。8月末は5〜7万円想定 · 一休・じゃらんで4.5前後の高評価(要確認)</div>
+<p class="i-why">3万坪の敷地に佇む大人向けの静かなオーベルジュ風ホテルで、記念日カップルの定番。全室から富良野の田園・山並みを望み、夕食フレンチの評価が非常に高い。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 温泉大浴場あり</div><div><b>食事:</b> 自家菜園の野菜を使ったフレンチのコースが名物(2食付が基本)</div></div>
+<div class="i-fit">▶ 4万〜帯で「食事重視・静かに過ごしたい」カップルなら8/30泊のベスト候補。ニングルテラスへ車約10分、翌朝美瑛へ約1時間</div><div class="i-caution">⚠ 夕食開始時間があるため空港13:35着→チェックイン17時台を守れるよう当日の寄り道は控えめに。12歳以下宿泊不可(大人の宿)の点は同行者次第で確認を</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">白金温泉郷 森の旅亭びえい</span><a class="map" href="https://www.google.com/maps/search/白金温泉郷+森の旅亭びえい" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">上川郡美瑛町白金温泉(青い池まで車約5分) · 和風旅館(数寄屋造り・全17室、うち12室客室露天付) · 2名1泊 約5.3万円〜(2食付)。8月末は6万円前後想定 · Tripadvisor・じゃらんとも4.5前後の高評価(要確認)</div>
+<p class="i-why">美瑛側の最高級枠。客室露天+かけ流し温泉+静かな森という大人カップル向けの環境で、翌朝は観光客が来る前の青い池・白ひげの滝を独占的に楽しめる立地。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 源泉かけ流しの白金温泉。客室露天風呂付き部屋が多い</div><div><b>食事:</b> 和会席の2食付が基本</div></div>
+<div class="i-fit">▶ 「富良野泊」の代わりに「美瑛(白金)泊」へ変える選択肢として。新千歳から約3時間かかるので当日は直行推奨。ニングルテラスには行けない(車で約1時間15分)点とのトレードオフ</div><div class="i-caution">⚠ 富良野の夜(ニングルテラス)を諦める配置になる。周辺に飲食店がほぼなく2食付必須</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ペンション あしたや</span><a class="map" href="https://www.google.com/maps/search/ペンション+あしたや" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">空知郡中富良野町(丘の上・ラベンダー畑エリア) · ペンション · 2名1泊 1.3〜2万円程度(2食付でも2万円前後) · 楽天トラベル4.7〜4.9クラスの高評価(件数少なめ・要確認)</div>
+<p class="i-why">じゃらんの富良野・美瑛ペンションランキング常連。貸切風呂があるためカップルでも気兼ねなく、家庭的な食事と丘の眺めが魅力。〜2万円で「宿の思い出」を作りたい2人向け。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料</div><div><b>温泉・風呂:</b> 貸切風呂あり(温泉ではない)</div><div><b>食事:</b> 手作りの2食付プランが人気</div></div>
+<div class="i-fit">▶ 8/30泊の節約プラン。ニングルテラスへ車約15分、翌朝美瑛へ40〜50分</div><div class="i-caution">⚠ 小規模宿のため8月末でも土曜日(8/29)ほどではないが日曜も埋まりやすい。設備はホテルと違い簡素、アメニティは要確認</div></div>
+<div class="notes"><b>チームメモ:</b> 重要: ユーザー指定の「ぽらりす」(★4.9・口コミ約127件・1つ星ホテル表記)は富良野・美瑛エリアの施設ではなく、道東・弟子屈町(摩周湖近く)の星空ペンション「ぽらりす」と特定(公式: polaris-hokkaido.com、弟子屈なび・JTB・じゃらん掲載)。「1つ星ホテル」はGoogleマップが自動付与するホテルクラス表示で品質評価ではない。富良野から車で3.5〜4時間のため今回の行程には組み込み不可。全体傾向: 8/30(日)は夏のトップシーズン末期で、日曜泊のため土曜より1〜2割安いことが多いが、新富良野プリンスや森の旅亭びえいなど人気宿は既に満室の可能性あり(空室・料金はすべて要確認)。プラン別の推し: 現行プラン(夜ニングルテラス重視)=新富良野プリンス&gt;ナトゥールヴァルト、コスパ+温泉=ふらのラテール、記念日・食事重視=フラノ寶亭留、翌朝の美瑛・青い池最優先なら森の旅亭びえいで「美瑛泊」に変更も一案。価格は2026年8月時点の予約サイト掲載の目安値。主な出典: プリンスホテル公式/Tripadvisor、JTB(ナトゥールヴァルト・寶亭留・森の旅亭掲載料金)、じゃらんランキング、ふらの観光協会・美瑛町観光協会の宿泊一覧。</div>
+<h2 style="--c:var(--d4);--cs:var(--d4-soft)"><span class="chip">札幌(8/31・9/1の2連泊)</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">ラ・ジェント・ステイ札幌大通</span><a class="map" href="https://www.google.com/maps/search/ラ・ジェント・ステイ札幌大通" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">大通・狸小路(すすきの徒歩3分) · ホテル(温泉付きデザインホテル) · 2名素泊まり 約1.2〜1.8万円(平日なら1万円台前半も) · じゃらん等で4.0〜4.2前後(目安)</div>
+<p class="i-why">大通〜すすきののど真ん中で天然温泉大浴場に入れるコスパ枠。9/1に積丹・小樽から遅く戻っても飲食店に困らない立地。</p>
+<div class="i-rows"><div><b>駐車場:</b> 提携立体駐車場40台・先着順、1,800円/24時間(車高等の制限あり・要確認)</div><div><b>温泉・風呂:</b> 天然温泉大浴場あり(和モダン2種)。サウナは小規模・要確認</div><div><b>食事:</b> 素泊まり中心。朝食付きプランもあり。狸小路直結で外食に最適</div></div>
+<div class="i-fit">▶ 現行プラン8/31・9/1の札幌2連泊(〜1.5万円帯)。狸小路・すすきの至近で夜の外食派に最適</div><div class="i-caution">⚠ 駐車場は先着順40台。22時〜翌7時はスタッフ不在のため入出庫ルールを要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ベッセルイン札幌中島公園</span><a class="map" href="https://www.google.com/maps/search/ベッセルイン札幌中島公園" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">中島公園(中島公園駅徒歩1分・すすきの徒歩圏) · ビジネスホテル(朝食特化) · 2名朝食付き 約1.3〜1.8万円 · 朝食評価が特に高く総合4.3〜4.5前後(目安)</div>
+<p class="i-why">1.5万円以下で北海道らしい海鮮朝食を楽しめる代表格。駐車料金も市内では安め。</p>
+<div class="i-rows"><div><b>駐車場:</b> 立体1,500円/泊、平面1,700円/泊(中型車2,700円)。時間貸30分250円</div><div><b>温泉・風呂:</b> 大浴場なし(客室バスのみ)</div><div><b>食事:</b> 朝食が看板。『朝食の美味しいホテル』全国4位実績。日替わり8種ネタの海鮮勝手丼+ザンギ・ジンギスカン等</div></div>
+<div class="i-fit">▶ 〜1.5万円帯で『朝食有名』枠。8/31・9/1どちらの泊にも</div><div class="i-caution">⚠ 大浴場はないので温泉重視なら他候補と組み合わせを。朝食会場は7〜8時台が混雑</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ドーミーインPREMIUM札幌(石狩の湯)</span><a class="map" href="https://www.google.com/maps/search/ドーミーインPREMIUM札幌" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">狸小路(大通・すすきの徒歩圏) · ホテル(大浴場・サウナ充実) · 2名素泊まり 約1.5〜2.2万円 · 4.2〜4.4前後(目安)。サウナ好きの定番</div>
+<p class="i-why">狸小路に面した立地でサウナ付き大浴場・夜鳴きそばまで揃うドーミーインの上位館。観光で歩き疲れた夜に強い。</p>
+<div class="i-rows"><div><b>駐車場:</b> 併設立体28台・先着順 1,800円/泊(車高1.5m/ハイルーフ2.0mまで等制限あり)。満車時は提携『3.5狸パーキング』案内</div><div><b>温泉・風呂:</b> 男女別大浴場『石狩の湯』+サウナ完備。夜通し入浴可(時間は要確認)</div><div><b>食事:</b> 朝食は海鮮小鉢中心のバイキング。21:30〜の無料『夜鳴きそば』が名物</div></div>
+<div class="i-fit">▶ 1.5〜3万円帯。9/1にニセコ・神威岬から遅く戻る日の湯+夜鳴きそばが好相性</div><div class="i-caution">⚠ 立体駐車場はSUV・ハイルーフ車だと入らない場合あり。レンタカーの車種次第では提携駐車場になる点を要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">すすきのグランベルホテル</span><a class="map" href="https://www.google.com/maps/search/すすきのグランベルホテル" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(すすきの駅徒歩3分) · デザイナーズホテル(2021年開業・全300室) · 2名素泊まり 約1.5〜2.5万円 · 4.3〜4.5前後(目安)。カップル人気が高い</div>
+<p class="i-why">新しめのデザイナーズホテルで、最上階の露天風呂から札幌の夜景を眺められるカップル向きの一軒。</p>
+<div class="i-rows"><div><b>駐車場:</b> 宿泊2,000円/泊(14:00〜11:00)、超過300円/時</div><div><b>温泉・風呂:</b> 最上階17階に天空露天風呂付き大浴場。サウナ有無は要確認(あり情報が複数あるが公式で確認推奨)</div><div><b>食事:</b> 朝食ブッフェあり(ルーフトップレストラン)。すすきの中心で夕食は外食向き</div></div>
+<div class="i-fit">▶ 1.5〜3万円帯。カップルで夜景+夜のすすきのを楽しみたい現行プラン向き</div><div class="i-caution">⚠ 繁華街ど真ん中なので静けさ重視なら注意。駐車場台数・車両制限は要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">京王プラザホテル札幌</span><a class="map" href="https://www.google.com/maps/search/京王プラザホテル札幌" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌駅西口 徒歩5分 · シティホテル · 2名朝食付き 約2.5〜3.5万円 · 朝食は各ランキング常連で総合4.3〜4.5前後(目安)</div>
+<p class="i-why">『札幌で一番美味しい朝食ブッフェ』と評されることが多い名門。300台の直結自走式駐車場は連泊+レンタカー旅と相性抜群。</p>
+<div class="i-rows"><div><b>駐車場:</b> ホテル直結・自走式立体 約300台、宿泊者最大2,000円/泊。予約不要で高さ制限が緩く(自走式)レンタカー向き</div><div><b>温泉・風呂:</b> 大浴場なし(屋内プール・フィットネスはあり・有料)</div><div><b>食事:</b> 朝食が有名枠の筆頭格。実演寿司・道産卵オムレツ・スパークリングワイン付きブッフェ(宿泊者約3,600円/割引あり)と最上階の和食御膳の2会場制</div></div>
+<div class="i-fit">▶ 1.5〜3万円帯上位。9/2朝に朝食をゆっくり楽しんでから札幌観光→空港へ、の最終泊にも好適</div><div class="i-caution">⚠ 大浴場はない。朝食は連日メニューが近いので2連泊なら1回は外朝食もあり</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">札幌プリンスホテル</span><a class="map" href="https://www.google.com/maps/search/札幌プリンスホテル" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">大通西11丁目(大通と円山の中間・円山寄り) · シティホテル(タワー型・天然温泉付き) · 2名朝食付き 約1.8〜2.8万円 · 4.0〜4.2前後(目安)</div>
+<p class="i-why">都心と円山の中間で温泉大浴場+比較的安い駐車場(1,500円)が揃うバランス型。円山散歩と繁華街の両取りができる。</p>
+<div class="i-rows"><div><b>駐車場:</b> 191台・先着順 1,500円/泊</div><div><b>温泉・風呂:</b> 天然温泉大浴場+露天風呂あり(利用時間・宿泊者料金は要確認)</div><div><b>食事:</b> 朝食ブッフェあり。周辺は円山方面の飲食店にも出やすい</div></div>
+<div class="i-fit">▶ 1.5〜3万円帯。『円山エリア寄り』枠その1。円山公園・北海道神宮観光を組み込みたい場合に</div><div class="i-caution">⚠ 大通駅からは徒歩10分強と中心部よりやや西。温泉の営業形態(時間帯・別料金の有無)は要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ONSEN RYOKAN 由縁 札幌</span><a class="map" href="https://www.google.com/maps/search/ONSEN+RYOKAN+由縁+札幌" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">大通西7丁目(大通公園すぐ・円山方面にも近い) · 温泉旅館(都市型・2020年開業) · 2名素泊まり 約2〜3万円、夕朝食付きは3万円台〜 · 4.4〜4.6前後(目安)。雰囲気重視のカップルに高評価</div>
+<p class="i-why">札幌中心部で本物の温泉(カルルス温泉運び湯)+露天+サウナに浸かれる希少な都市型旅館。和モダンの落ち着いた空間でカップル向き。</p>
+<div class="i-rows"><div><b>駐車場:</b> 20台・先着順(15時〜) 2,000円/泊。満車時は近隣有料駐車場案内</div><div><b>温泉・風呂:</b> 登別カルルス温泉から運ぶ源泉の大浴場+露天風呂+サウナ。15:00〜25:00/朝6:00〜10:00</div><div><b>食事:</b> 朝食・夕食付きプランあり(和食)。素泊まりで外食も便利な立地</div></div>
+<div class="i-fit">▶ 3万円帯(素泊まりなら2万円台)。2連泊のうち1泊を『旅館気分』にしたい場合の本命</div><div class="i-caution">⚠ 駐車場20台と少なめで先着順。8/30チェックイン便との連泊にする場合も15時以降の入庫ルールに注意</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">JRタワーホテル日航札幌</span><a class="map" href="https://www.google.com/maps/search/JRタワーホテル日航札幌" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌駅直結 · ハイクラスシティホテル(高層) · 2名朝食付き 約3〜4.5万円 · 4.4〜4.6前後(目安)</div>
+<p class="i-why">全室17階以上の眺望と駅直結の利便性で連泊の拠点として最強クラス。駐車場が500台・1,210円/泊と大規模ホテルでは破格。</p>
+<div class="i-rows"><div><b>駐車場:</b> JRタワー駐車場500台・予約不要、宿泊者1,210円/泊(高さ2.2m以下)。市内中心では最安級</div><div><b>温泉・風呂:</b> 22階スカイリゾートスパ『プラウブラン』(温泉水利用)。宿泊者2,150円/人・18歳未満不可。12:00〜23:00/朝6:00〜9:00</div><div><b>食事:</b> 35階スカイレストランでの朝食など朝食評価も高い</div></div>
+<div class="i-fit">▶ 3万円〜帯。最終泊(9/1)に高層階夜景+スパで締める使い方が良い。9/2の札幌駅周辺観光にも至便</div><div class="i-caution">⚠ スパは別料金(2,150円/人)で18歳未満不可。車高2.2m超のハイルーフ車は不可</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">RY&#x27;sホテル札幌宮の森</span><a class="map" href="https://www.google.com/maps/search/RY&#x27;sホテル札幌宮の森" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">円山・宮の森(円山公園・北海道神宮近く) · 一棟貸しヴィラ(150平米) · 2名 約3〜5万円台(人数・時期で変動大・要確認) · クチコミ件数少なめ・高評価傾向(要確認)</div>
+<p class="i-why">円山の閑静な住宅街で一軒家を貸し切れるユニーク枠。無料の屋根付き駐車場でレンタカー旅と好相性、円山散歩・神宮参拝が徒歩圏。</p>
+<div class="i-rows"><div><b>駐車場:</b> 屋根付き駐車場3台・無料</div><div><b>温泉・風呂:</b> 大浴場なし(一棟貸しの広いバスルーム。設備詳細は要確認)</div><div><b>食事:</b> 食事なし(キッチン付き。円山の人気ベーカリーやレストランでの調達向き)</div></div>
+<div class="i-fit">▶ 3万円〜帯・『円山エリア』枠その2。人と違う滞在をしたいカップル、静かに過ごしたい2連泊に</div><div class="i-caution">⚠ 中心部(すすきの)へは車か地下鉄移動が前提。設備・チェックイン方法・最新料金は予約サイトで要確認</div></div>
+<div class="notes"><b>チームメモ:</b> 前提: 8/31(月)・9/1(火)の平日2連泊のため、週末より1〜3割安い水準で泊まれる傾向。9/1はニセコ→神威岬→小樽と長距離運転後の帰着が夜になる想定なので、(1)24時間入出庫できる駐車場、(2)深夜まで入れる大浴場、(3)遅い時間でも食事できる立地(狸小路・すすきの)を重視して選定。おすすめの組み合わせ例: ①コスパ+温泉なら「ラ・ジェント・ステイ大通」2連泊、②1泊目ドーミーインPREMIUM(サウナ+夜鳴きそば)+2泊目を由縁 or JRタワー日航でグレードアップ、③朝食重視なら最終泊を京王プラザにして9/2朝をゆっくり。注意点: 札幌中心部のホテル駐車場はほぼ全て「先着順・有料(1,200〜2,000円/泊)」で、立体駐車場は車高1.5〜1.6m制限が多い(SUV系レンタカーは要注意。京王プラザ自走式300台・JRタワー500台(2.2m以下)・プリンス平面系が比較的安全)。価格・駐車場条件は2026年8月時点の検索結果に基づく目安で、公式サイトでの直前確認を推奨(要確認と明記した項目は特に)。主な情報源: 各ホテル公式(dormy-hotels.com, keioplaza-sapporo.co.jp, vessel-hotel.jp, jrhotels.co.jp)、じゃらん・JTB・Yahoo!トラベルの施設ページ、朝食ランキング記事(tabirai.net, johnny88.jp, note.com 2026年版)。</div>
+<h2 style="--c:var(--d3);--cs:var(--d3-soft)"><span class="chip">代替プラン用:ニセコ・登別・トマム・小樽</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">Chalet Ivy Weiss(シャレーアイビー ワイス)</span><a class="map" href="https://www.google.com/maps/search/Chalet+Ivy+Weiss" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">ニセコ・ワイス/花園エリア(倶知安町、ひらふ中心部から車で約15分) · スモールラグジュアリーホテル(2025年夏開業) · 2名1泊 約5〜9万円(ふるなびトラベルで1泊約43,000pt相当のプランあり。8/30-9/1のグリーンシーズン実勢は要確認) · ★4.9(Booking.com、25〜28件)</div>
+<p class="i-why">羊蹄山を望む静かな山間に建つ新しい宿で、7階ウェルネスフロアのインフィニティ温泉と屋上の雲見ラウンジが特徴。客室からの眺望付き貸切/プライベート温泉とスタッフの対応がクチコミで高評価(Booking.com 4.9/5・約25〜28件)。</p>
+<div class="i-rows"><div><b>駐車場:</b> 無料駐車場あり(EV充電あり)</div><div><b>温泉・風呂:</b> あり(7階インフィニティ温泉+ウェルネスフロア、プライベート温泉)</div><div><b>食事:</b> 朝食付きプランあり(地元食材の朝食7:00-10:00が無料との情報あり・要確認)。夕食はホテル内または要外食・要確認</div></div>
+<div class="i-fit">▶ B案の9/1ニセコ泊。記念日感のあるカップル滞在に最適</div><div class="i-caution">⚠ 開業1年目でクチコミ件数が少ない(25〜28件)。ひらふ中心部から離れており夕食の選択肢は要確認。公式サイトは直接取得不可だったため詳細料金は要確認(TEL 0136-55-6080)</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">坐忘林(ざぼうりん)</span><a class="map" href="https://www.google.com/maps/search/坐忘林" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">ニセコ(倶知安町・花園の森の中、倶知安駅から車約15分) · 全室露天風呂付きスイートの高級温泉旅館 · 2名1泊2食 約10〜15万円以上(ハイエンド帯・要確認) · 各予約サイトで最高評価帯(具体値は要確認)</div>
+<p class="i-why">手つかずの森に佇む全15室の大人向け隠れ家。全室に源泉かけ流し露天風呂+リビング・ダイニング付き、夕食は北海道食材の「北懐石」。ニセコで最もカップル向けと評されるハイエンド宿。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(無料・要確認)</div><div><b>温泉・風呂:</b> 全室に源泉かけ流し露天風呂</div><div><b>食事:</b> 夕朝食付き(北懐石)</div></div>
+<div class="i-fit">▶ B案ニセコ泊で予算を上げて特別な一泊にしたい場合</div><div class="i-caution">⚠ 予算が現行プランの他泊と大きく乖離する可能性。連泊推奨の宿のため1泊利用の可否・料金は要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">木ニセコ(Ki Niseko)</span><a class="map" href="https://www.google.com/maps/search/木ニセコ" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">ニセコひらふ(グラン・ヒラフのゴンドラ徒歩100m以内) · コンドミニアム型ホテル · 2名1泊 約3〜5万円(夏季は冬より大幅に安い・要確認) · Booking/Agodaで高評価(具体値は要確認)</div>
+<p class="i-why">ひらふ中心の便利な立地で、飲食店やコンビニに近く夏の観光拠点として使いやすい。温泉大浴場と羊蹄山ビューの客室があり、価格と快適さのバランスが良い中価格帯の選択肢。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(無料・要確認)</div><div><b>温泉・風呂:</b> あり(天然温泉大浴場)</div><div><b>食事:</b> 朝食付きプランあり。周辺に飲食店多く夕食は外食しやすい</div></div>
+<div class="i-fit">▶ B案ニセコ泊のコスパ重視版。夕食を外で楽しみたいカップル向け</div><div class="i-caution">⚠ 夏季は一部レストラン休業の可能性あり・要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">第一滝本館</span><a class="map" href="https://www.google.com/maps/search/第一滝本館" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">登別温泉(地獄谷のすぐそば・徒歩数分) · 老舗大型温泉旅館(創業160年以上) · 2名1室夕朝食付き 税込約44,000円〜 · 楽天/じゃらん等で高評価(泉質・大浴場が特に好評)</div>
+<p class="i-why">地獄谷に最も近い立地で、全面ガラス張りの大浴場から地獄谷を一望。7種類の源泉・約35浴槽・1,500坪の「温泉天国」で湯めぐりでき、登別の温泉体験としては随一。夜の地獄谷鬼火の路散策にも便利。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり</div><div><b>温泉・風呂:</b> あり(源泉かけ流し多数、地獄谷ビュー大浴場)</div><div><b>食事:</b> 夕朝食付き(ビュッフェプラン等)</div></div>
+<div class="i-fit">▶ D案初日(8/30)登別泊。新千歳から車約1時間で13:35着でも余裕</div><div class="i-caution">⚠ 大型旅館のため繁忙期は混雑しがち。静かさ重視なら次の2軒が向く</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">望楼NOGUCHI登別</span><a class="map" href="https://www.google.com/maps/search/望楼NOGUCHI登別" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">登別温泉(温泉街中心、地獄谷まで徒歩圏) · 全室スイート・展望風呂付きの大人向けデザイン旅館 · 2名1泊2食 約7〜12万円(要確認) · 高評価帯(具体値は要確認)</div>
+<p class="i-why">全室に源泉かけ流しの展望風呂を備えたスイートルームで、大人の隠れ家的なプライベート空間。北海道の旬の会席料理。カップルの記念日利用に最適とされる登別のハイエンド宿。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(要確認)</div><div><b>温泉・風呂:</b> 全室かけ流し展望風呂+大浴場</div><div><b>食事:</b> 夕朝食付き(会席)</div></div>
+<div class="i-fit">▶ D案初日を贅沢に過ごしたいカップル向け</div><div class="i-caution">⚠ 料金が高め。13歳未満不可などの年齢制限がある場合あり・要確認(TEL 0570-026570)</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">登別温泉郷 滝乃家</span><a class="map" href="https://www.google.com/maps/search/登別温泉郷+滝乃家" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">登別温泉(温泉街、地獄谷まで徒歩圏) · 数寄屋造りの高級温泉旅館 · 2名1泊 税込約77,000円〜 · 高評価帯(じゃらん等・具体値は要確認)</div>
+<p class="i-why">庭園と屋上露天風呂が評判の落ち着いた和風旅館で、料理評価が非常に高い。静かに過ごしたい大人カップル向けの正統派高級宿。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(要確認)</div><div><b>温泉・風呂:</b> あり(屋上露天風呂・大浴場、露天風呂付き客室あり)</div><div><b>食事:</b> 夕朝食付き(会席)</div></div>
+<div class="i-fit">▶ D案初日。望楼NOGUCHIと並ぶ贅沢枠</div><div class="i-caution">⚠ 人気宿のため直前の空室は少ない傾向・要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">星野リゾート トマム ザ・タワー</span><a class="map" href="https://www.google.com/maps/search/星野リゾート+トマム+ザ・タワー" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">トマム(占冠村)・リゾート中心部 · 大型タワーリゾートホテル · 2名1泊 約2.5〜5万円(食事なし〜朝食付き、夏季目安・要確認) · Tripadvisor等で中〜高評価(設備の経年を指摘する声あり)</div>
+<p class="i-why">リゾートの中心に建ち、雲海ゴンドラ・ミナミナビーチ・木林の湯などへのアクセスが良い実用派。30階以上の高層階なら部屋から雲海が見えることも。リゾナーレの半額〜1/3程度で泊まれるコスパ枠。2026年グリーンシーズン営業は4/24〜10/31。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(無料)</div><div><b>温泉・風呂:</b> 館内に大浴場なし(リゾート内の「木林の湯」を利用)</div><div><b>食事:</b> 基本素泊まり/朝食付き。夕食はリゾート内レストラン(ホタルストリート等)</div></div>
+<div class="i-fit">▶ E案(トマム泊)。8/30に新千歳→トマム(車約1.5時間)で翌朝雲海テラスへ</div><div class="i-caution">⚠ 雲海遭遇率は約40%。2026年から雲海ゴンドラは前日17:00開始の事前予約制(宿泊者向け)。上りゴンドラ最終8:00と早朝勝負</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">リゾナーレトマム</span><a class="map" href="https://www.google.com/maps/search/リゾナーレトマム" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">トマム(占冠村)・リゾート高台の針葉樹林側 · 全室スイート(100平米以上)のラグジュアリーホテル · 2名1泊 約6〜12万円(タワーの2〜3倍・要確認) · 高評価帯</div>
+<p class="i-why">全室100平米超のスイートで、客室にジェットバス+プライベートサウナを備える部屋も。高台の静かな立地でタワーより大人向け・上質。アメニティや設備の充実度で明確に格上。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(無料)</div><div><b>温泉・風呂:</b> 館内大浴場なし(木林の湯利用)。客室にジェットバス等</div><div><b>食事:</b> 素泊まり/朝食付き中心。夕食はリゾート内レストラン</div></div>
+<div class="i-fit">▶ E案で予算を上げるならこちら。雲海テラス早朝アクセスは両ホテル同条件(シャトル/車)</div><div class="i-caution">⚠ タワーとの違いは「広さ・静けさ・設備」で、雲海テラス優先ならタワーで十分という比較記事が多い。ファミリー客も多い点は留意</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">運河の宿 おたる ふる川</span><a class="map" href="https://www.google.com/maps/search/運河の宿+おたる+ふる川" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽運河沿い(浅草橋側) · ノスタルジック系温泉旅館 · 2名1泊 約26,600円〜(プランにより〜15万円。夕朝食付き中位プランで4〜6万円目安・要確認) · 高評価(ニフティ温泉・各予約サイトで好評)</div>
+<p class="i-why">小樽運河沿いに建つ和の温泉宿で、運河ビューの客室と、小樽軟石の内湯・檜の露天風呂・よもぎ蒸し湯を備えた大浴場が特徴。夜の運河散策に最高の立地で、カップルの小樽泊の本命格。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(有料の可能性・要確認)</div><div><b>温泉・風呂:</b> あり(温泉大浴場+露天風呂)</div><div><b>食事:</b> 夕朝食付きプランあり</div></div>
+<div class="i-fit">▶ B案の9/1小樽泊。夕方の神威岬→小樽入り後、夜景の運河を楽しむ流れに合う</div><div class="i-caution">⚠ 運河ビュー確約は部屋タイプ指定が必要・要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ホテルソニア小樽(天然温泉 小樽運河の湯)</span><a class="map" href="https://www.google.com/maps/search/ホテルソニア小樽" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽運河沿い・小樽駅徒歩圏 · 運河沿いのクラシカルなシティホテル · 2名1泊 税込約9,880円〜(素泊まり。朝食付きで2〜3万円台目安・要確認) · 立地は高評価。施設の老朽化を指摘する声あり</div>
+<p class="i-why">運河沿い至近の立地で、最上階に天然温泉大浴場(男湯は運河見下ろし、女湯は露天付き)。英国アンティーク調の内装でカップルのデート利用に人気。ふる川より手頃な中価格帯。</p>
+<div class="i-rows"><div><b>駐車場:</b> あり(有料・要確認)</div><div><b>温泉・風呂:</b> あり(最上階天然温泉大浴場)</div><div><b>食事:</b> 朝食付きプランあり。夕食は小樽の寿司・海鮮を外食で</div></div>
+<div class="i-fit">▶ B案小樽泊のコスパ枠。夕食を街で楽しみたい場合に最適</div><div class="i-caution">⚠ 建物の経年感は口コミで指摘あり。運河ビュー客室は指定プランのみ・要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">UNWIND HOTEL &amp; BAR 小樽</span><a class="map" href="https://www.google.com/maps/search/UNWIND+HOTEL+&amp;+BAR+小樽" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・堺町通り近く(小樽運河まで約200m) · 歴史的建造物(旧越中屋ホテル)改装のブティックホテル · 2名1泊 約12,400円〜(朝食付きで2〜3万円台目安・要確認) · 高評価(朝食・スタッフ対応が特に好評)</div>
+<p class="i-why">1931年築の北海道初の外国人向けホテルをリノベした雰囲気重視の宿。天井が高いクラシカルな客室、夜は宿泊者向けバー(ワイン無料サービスの時間帯あり)、スコーン付きハイティー形式の朝食が名物でカップルに人気。</p>
+<div class="i-rows"><div><b>駐車場:</b> 提携駐車場(有料・台数限定・要確認)</div><div><b>温泉・風呂:</b> なし(客室バスのみ。温泉重視ならふる川/ソニアへ)</div><div><b>食事:</b> 朝食(ハイティー形式)が高評価。夕食は外食</div></div>
+<div class="i-fit">▶ B案小樽泊で「温泉よりムード・朝食重視」のカップル向け</div><div class="i-caution">⚠ 一部客室は狭め。大浴場なし。駐車場は先着/有料のため車利用は事前確認必須</div></div>
+<div class="notes"><b>チームメモ:</b> 全体傾向と補足: (1)ニセコB案はChalet Ivy Weiss(新規開業・★4.9)が本命だが公式サイトが直接参照できず、8/31〜9/1の実勢価格と夕食提供体制は要確認(TEL 0136-55-6080)。ひらふ中心から車15分の静かな立地で、夕食を外に出るなら車移動前提。(2)登別D案は新千歳13:35着→登別まで車約1時間なので8/30初日泊に無理がない。地獄谷至近の第一滝本館(2食付き約4.4万円〜)がバランス型、望楼NOGUCHI/滝乃家(7万円台〜)が贅沢枠。(3)トマムE案の核心は雲海テラス: 2026年から雲海ゴンドラは前日17:00開始の事前予約制になり、上り最終8:00の早朝勝負・遭遇率約40%。タワーは安価で立地良いが大浴場なし(木林の湯利用)、リゾナーレは全室100平米超スイートで2〜3倍の価格。雲海目的だけならタワーで十分という比較が多数。(4)小樽B案は温泉重視なら「ふる川」、コスパなら「ソニア」、雰囲気・朝食重視なら「UNWIND」。(5)2026年4月から北海道・小樽で宿泊税が導入されておりチェックイン時に別途徴収される点に注意(他市町村の適用状況は要確認)。価格はいずれも検索時点の目安で、8/30〜9/2は夏休み明け直後の日曜〜水曜のため週末ピークよりは取りやすい見込みだが空室保証はなし。主な出典: chaletivy.com、booking.com、ふるなびトラベル、たびらい、一休、じゃらん、JTB、楽天トラベル、snowtomamu.jp(星野リゾート公式)、prtimes(星野リゾート発表)、ニフティ温泉、価格.com。</div>
+<p class="src">※ 価格・営業時間・空室は2026年8月時点の調査に基づく目安です。予約前に公式サイト・予約サイトで最新情報をご確認ください。</p>
+</div>
+</body>
+</html>

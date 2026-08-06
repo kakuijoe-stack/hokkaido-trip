@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2C7DA0">
+<title>グルメ候補リスト</title>
+<style>
+:root{--bg:#F4F7F8;--card:#FFFFFF;--ink:#20303A;--sub:#5D6E78;--line:#DCE4E8;
+--accent:#2C7DA0;--accent-soft:#E3EEF4;--warn-bg:#FBF1E6;--warn-ink:#8A5A1E;--warn-line:#EAD3B4;
+--d1:#7C6BAF;--d1-soft:#EEEAF7;--d2:#2C7DA0;--d2-soft:#E3EEF4;--d3:#4A7C59;--d3-soft:#E7F1EA;
+--d4:#A85B32;--d4-soft:#F7EBE3;--shadow:0 1px 3px rgba(32,48,58,.08)}
+@media (prefers-color-scheme: dark){:root{--bg:#141B20;--card:#1D262C;--ink:#E4EBEF;--sub:#93A4AE;
+--line:#31404A;--accent:#5FA8C7;--accent-soft:#22333D;--warn-bg:#332818;--warn-ink:#E4B877;--warn-line:#4D3D22;
+--d1:#A695D6;--d1-soft:#2A2438;--d2:#5FA8C7;--d2-soft:#1E313C;--d3:#7FAF8E;--d3-soft:#22312A;
+--d4:#D08A5E;--d4-soft:#38291F;--shadow:0 1px 3px rgba(0,0,0,.3)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;
+font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 80px}
+header{padding:26px 0 6px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+h1{margin:4px 0 2px;font-size:24px;font-weight:800;text-wrap:balance}
+.lead{color:var(--sub);font-size:13px}
+a.back{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;
+border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+h2{font-size:15px;font-weight:800;margin:28px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .chip{font-size:11px;padding:2px 10px;border-radius:999px;font-weight:700;background:var(--cs);color:var(--c)}
+.item{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c,var(--accent));
+border-radius:12px;box-shadow:var(--shadow);padding:13px 16px;margin-bottom:10px}
+.i-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.i-name{font-size:15px;font-weight:800}
+a.map{color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}
+.i-meta{font-size:12px;color:var(--sub);margin-top:2px}
+.i-why{font-size:13px;margin:8px 0 6px}
+.i-rows{font-size:12px;color:var(--sub);display:grid;gap:2px}
+.i-rows b{color:var(--ink);font-weight:700}
+.i-fit{margin-top:7px;font-size:12px;font-weight:700;color:var(--c,var(--accent));
+background:var(--cs,var(--accent-soft));border-radius:8px;padding:4px 10px;display:inline-block}
+.i-caution{margin-top:7px;font-size:12px;color:var(--warn-ink);background:var(--warn-bg);
+border:1px solid var(--warn-line);border-radius:8px;padding:4px 10px}
+.notes{font-size:12px;color:var(--sub);background:var(--card);border:1px dashed var(--line);
+border-radius:10px;padding:10px 14px;margin-top:4px}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);
+border-radius:10px;padding:10px 14px;font-size:13px;margin:14px 0}
+.src{margin:30px 0 0;font-size:11px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="eyebrow">HOKKAIDO 2026.8.30 - 9.2</div>
+<h1>グルメ候補リスト</h1>
+<div class="lead">エージェントチーム調査による食事候補40件(既存リストと重複なし)</div>
+<a class="back" href="index.html">← 旅のしおりに戻る</a>
+</header>
+<h2 style="--c:var(--d1);--cs:var(--d1-soft)"><span class="chip">富良野・美瑛</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">くまげら</span><a class="map" href="https://www.google.com/maps/search/くまげら" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野駅徒歩5分(日の出町) · 郷土料理・居酒屋 · ローストビーフ丼 約2,000〜2,500円/夜1人2,000〜4,000円目安 · 食べログ百名店級の人気(3.5前後)</div>
+<p class="i-why">ドラマ『北の国から』ロケ中に創業した富良野を代表する郷土料理店。名物は和牛ローストビーフ丼と富良野カレーの先駆けオムカレー、山賊鍋など山の幸も味わえる。</p>
+<div class="i-rows"><div><b>営業:</b> 11:30〜22:00(LO21:00)、水曜定休 → 8/30(日)営業見込み</div><div><b>予約:</b> 電話予約可とされるが混雑時は待ちあり(要確認)</div></div>
+<div class="i-fit">▶ 8/30(日)夜の富良野夕食の第一候補</div><div class="i-caution">⚠ 観光客に非常に人気で夏休み最終日曜は行列の可能性。早め入店推奨</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">唯我独尊</span><a class="map" href="https://www.google.com/maps/search/唯我独尊" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野駅徒歩5分 · カレー(富良野オムカレー)・自家製ソーセージ · オムソーセージカレー 約1,400〜1,700円 · 食べログ3.5超の人気店</div>
+<p class="i-why">富良野カレーの超有名店。自家製スモークソーセージ載せオムカレーが名物で、合言葉『ルールルル』でルーのおかわりができる名物文化も楽しい。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00〜21:00(LO20:30)、月曜定休 → 8/30(日)営業見込み</div><div><b>予約:</b> 予約不可。行列必至だが回転は比較的早い</div></div>
+<div class="i-fit">▶ 8/30(日)夜の富良野夕食(カジュアルに済ませたい場合)</div><div class="i-caution">⚠ 夕方でも待ちが出ることあり。閉店前は売り切れ・受付終了の可能性(要確認)</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ふらのワインハウス</span><a class="map" href="https://www.google.com/maps/search/ふらのワインハウス" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野・清水山(市街から車約5分) · 洋食・ワインレストラン · 1人2,500〜5,000円目安(チーズフォンデュ+ワイン) · 観光客に定番の人気店</div>
+<p class="i-why">ぶどうヶ丘の高台から富良野盆地と十勝岳連峰を見渡すロケーションで、ふらのワインとチーズフォンデュ、地元食材の洋食が楽しめる。夕暮れ時のデートディナー向き。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00〜21:00、基本無休(年末年始除く) → 8/30(日)営業見込み</div><div><b>予約:</b> 電話予約可(0167-23-4155)。窓際席狙いなら予約推奨</div></div>
+<div class="i-fit">▶ 8/30(日)夜、雰囲気重視の夕食</div><div class="i-caution">⚠ レンタカー移動のため運転者は飲酒不可。ノンアルのふらのぶどう果汁あり</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">まさ屋</span><a class="map" href="https://www.google.com/maps/search/まさ屋" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">富良野駅徒歩5分(日の出町) · 鉄板焼き・お好み焼き · オムカレー約1,300円、夜1人1,500〜3,000円目安 · 食べログ3.5前後の人気店</div>
+<p class="i-why">鉄板で仕上げる富良野オムカレーが名物のカジュアル鉄板焼き店。目の前で焼き上げるライブ感があり、夜営業があるのでオムカレーを夕食にしたい場合に貴重。</p>
+<div class="i-rows"><div><b>営業:</b> 昼11:30〜14:30/夜17:00〜21:00頃。定休日は木曜(火曜説もあり・要確認) → 日曜は営業見込み</div><div><b>予約:</b> 少人数なら電話予約可の情報あり(要確認)</div></div>
+<div class="i-fit">▶ 8/30(日)夜の富良野夕食(オムカレーを夜に食べたい場合)</div><div class="i-caution">⚠ 小さめの店で夏季夜は満席になりやすい。営業時間・定休日は情報源で差異あり要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ル・ゴロワ フラノ</span><a class="map" href="https://www.google.com/maps/search/ル・ゴロワ+フラノ" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">新富良野プリンスホテル敷地内(風のガーデン隣接) · フレンチ(北海道食材) · ディナーコース約16,000円〜(ランチは約5,000円〜) · 食べログ高評価・全国区の知名度</div>
+<p class="i-why">倉本聰氏プロデュース、表参道から移転した名店。北海道産食材にこだわったコースフレンチで、記念日級のごちそうディナーにしたい場合の特別枠。</p>
+<div class="i-rows"><div><b>営業:</b> ディナー17:30〜19:30LO、月・火曜定休 → 8/30(日)営業見込み(振替休業の可能性あり要確認)</div><div><b>予約:</b> 完全予約制。予約係10:00〜17:00(0167-22-1123)。早めの予約必須</div></div>
+<div class="i-fit">▶ 8/30(日)夜、予算を上げて特別なディナーにする場合</div><div class="i-caution">⚠ 完全予約制のため当日飛び込み不可。予算が他候補と大きく異なる</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">あるうのぱいん</span><a class="map" href="https://www.google.com/maps/search/あるうのぱいん" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">美瑛・丘エリア(美瑛駅から車約5分) · ベーカリーカフェ · チーズフォンデュセット約1,500〜2,000円 · 美瑛カフェの定番人気(食べログ3.5前後)</div>
+<p class="i-why">畑の中の一軒家ベーカリーカフェ。自家製パンをくり抜いた器で食べるチーズフォンデュセットが名物で、テラスから丘の景色を眺められる美瑛らしい昼食スポット。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00〜17:00(LO16:00)、木・金曜定休 → 8/31(月)営業見込み。4月下旬〜10月下旬の季節営業</div><div><b>予約:</b> 予約不可の情報あり。開店直後の入店が無難(要確認)</div></div>
+<div class="i-fit">▶ 8/31(月)の美瑛ランチ本命</div><div class="i-caution">⚠ パン売り切れ次第終了あり。夏休み明け直後でも昼過ぎは待ちの可能性</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">フェルム ラ・テール美瑛</span><a class="map" href="https://www.google.com/maps/search/フェルム+ラ・テール美瑛" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">美瑛・大村(丘エリア、美瑛駅から車約10分) · レストラン&amp;菓子工房(洋食・スイーツ) · ランチ1,800〜3,000円目安、焼き菓子400円〜 · 食べログ3.5前後・土産菓子は全国区人気</div>
+<p class="i-why">丘の上の一軒家レストラン+菓子店。美瑛産小麦・バターを使った洋食ランチと、名物『バターチーズサンド』などのスイーツ土産が一度に揃う。</p>
+<div class="i-rows"><div><b>営業:</b> 物販10:00〜17:00、レストラン11:00〜15:00(LO14:30)。定休日は情報源により無休/水曜と差異あり → 8/31(月)営業の可能性高いが要確認</div><div><b>予約:</b> レストランは公式サイトから予約可(要確認)</div></div>
+<div class="i-fit">▶ 8/31(月)の美瑛ランチまたはスイーツ・土産購入</div><div class="i-caution">⚠ レストランは昼時混雑。営業日は公式サイト・Instagramで直前確認推奨</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ファミリーレストランだいまる</span><a class="map" href="https://www.google.com/maps/search/ファミリーレストランだいまる" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">美瑛駅徒歩3分(中町) · 食堂(ご当地・美瑛カレーうどん) · 美瑛カレーうどん約1,000〜1,400円 · 地元客・観光客双方に人気の老舗食堂</div>
+<p class="i-why">ご当地グルメ『美瑛カレーうどん』の名店。美瑛産小麦の自家製麺に美瑛豚のカツを載せた一杯で、地元食材を気軽に味わえる。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00〜15:30(LO15:00)、水曜定休 → 8/31(月)営業見込み</div><div><b>予約:</b> 予約不要・不可(要確認)</div></div>
+<div class="i-fit">▶ 8/31(月)の美瑛ランチ(安く早く地元グルメを食べたい場合)</div><div class="i-caution">⚠ 昼のみ営業。人気メニューは売り切れることあり</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">bi.blé(ビブレ)/北瑛小麦の丘</span><a class="map" href="https://www.google.com/maps/search/bi.blé" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">美瑛・北瑛(パッチワークの路の先、駅から車約15分) · オーベルジュレストラン+ブーランジェリー · コースランチ約3,000〜5,000円、パン300円〜 · 食べログ3.5超・美瑛の実力店</div>
+<p class="i-why">旧小学校を改装した丘の上のオーベルジュ。美瑛産小麦の石窯パンと地元野菜のフレンチベースのコースランチが評判で、パンだけの購入も可能。</p>
+<div class="i-rows"><div><b>営業:</b> 夏季は火曜定休(冬季は月〜木定休) → 8/31(月)は夏季扱いで営業見込みだが季節の切替時期のため要確認</div><div><b>予約:</b> レストランは予約推奨(公式サイト/電話)</div></div>
+<div class="i-fit">▶ 8/31(月)の美瑛ランチ(景色+きちんとしたコースにしたい場合)またはパン購入</div><div class="i-caution">⚠ 場所が丘の奥で移動時間がかかる。営業日・営業時間は公式サイトで直前確認を</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">美瑛選果(選果市場・小麦工房・レストランASPERGES)</span><a class="map" href="https://www.google.com/maps/search/美瑛選果" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">美瑛・国道237号沿い(美瑛駅から車約5分) · 農産物直売所+ベーカリー+野菜フレンチ · コーンぱん1個数百円、ASPERGESランチ約2,500〜4,000円 · ASPERGESはミシュラン北海道版一つ星歴あり</div>
+<p class="i-why">JAびえい運営の複合施設。美瑛産小麦の『小麦工房』のコーンパンが名物で、併設のASPERGES(アスペルジュ)はミシュラン一つ星歴のある美瑛野菜フレンチ。とうきびソフトなどスイーツも。</p>
+<div class="i-rows"><div><b>営業:</b> 直売所は夏季9:00〜17:00頃で概ね無休、ASPERGESは水曜定休+ランチ11:00〜15:00頃 → 8/31(月)営業見込みだが両施設とも要確認</div><div><b>予約:</b> ASPERGESは予約推奨(電話)。パンは予約不可</div></div>
+<div class="i-fit">▶ 8/31(月)のランチ(ASPERGES)またはパン・スイーツ・土産の立ち寄り</div><div class="i-caution">⚠ 名物コーンぱんは焼き上がり時間待ち・即売り切れが常態。午前中の訪問推奨</div></div>
+<div class="notes"><b>チームメモ:</b> 前提チェック: 8/30(日)夜の富良野は主要店が概ね営業(月曜定休の唯我独尊も日曜は営業、山香食堂は日曜定休のため除外)。8/31(月)の美瑛は月曜定休の店に注意が必要で、名物えび丼の『洋食とCafeじゅんぺい』は月曜定休のため旅程に合わず除外した。あるうのぱいん(木金定休)、だいまる(水曜定休)、bi.blé(夏季火曜定休)、美瑛選果は月曜営業見込み。ただし2026年8〜9月の臨時休業・季節営業切替は各店の公式サイト/SNSで直前確認を推奨(『要確認』表記箇所)。ふらのワインハウスはレンタカー移動のため運転者の飲酒不可に注意。主な情報源: たびらい(くまげら)、johnny88.jp(唯我独尊)、furano.ne.jp/furanowinehouse.co.jp(ワインハウス)、princehotels.co.jp/shinfurano(ル・ゴロワ)、biei-hokkaido.jp(あるうのぱいん/だいまる/bi.blé)、fermelaterrebiei.com、bieisenka.jp、youshokutocafejyunpei.com(じゅんぺい月曜定休の確認)。</div>
+<h2 style="--c:var(--d4);--cs:var(--d4-soft)"><span class="chip">札幌</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">スープカレー GARAKU 札幌本店</span><a class="map" href="https://www.google.com/maps/search/スープカレー+GARAKU+札幌本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌・狸小路(大通駅徒歩3分) · スープカレー · 1,300〜1,800円/人</div>
+<p class="i-why">札幌スープカレーの代表格。和風だし×スパイスの濃厚スープと「やわらか炙り焙煎ザンギ」が名物で、行列必至の人気店。</p>
+<div class="i-rows"><div><b>営業:</b> 11:30-15:30(LO15:00)/17:00-20:30(LO20:00)。不定休・スープ切れ次第終了。8/31(月)・9/1(火)・9/2(水)いずれも基本営業(要確認)</div><div><b>予約:</b> 予約不可。開店前並びかピーク外し推奨</div></div>
+<div class="i-fit">▶ 9/2(水)昼に最適(大通エリアで空港へ向かう前に)。行列があるので昼は11:30着推奨</div><div class="i-caution">⚠ 土日や昼ピークは1時間以上待ちも。系列のGARAKU+やTREASUREに分散する手も</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">Soup Curry Suage+ 本店</span><a class="map" href="https://www.google.com/maps/search/Soup+Curry+Suage++本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南4西5) · スープカレー · 1,300〜1,800円/人</div>
+<p class="i-why">知床鶏や炭火炙り豚角煮など串に刺した具材が特徴のあっさり系スープカレー。GARAKUと並ぶ二大人気店で観光客の支持が高い。</p>
+<div class="i-rows"><div><b>営業:</b> 平日11:30-21:00(LO20:30)、月・木は20:30閉店(LO20:00)、土日祝11:00-21:00。定休日なし → 8/31(月)〜9/2(水)営業見込み(要確認)</div><div><b>予約:</b> 席の事前予約不可。支払いは現金・PayPayのみ</div></div>
+<div class="i-fit">▶ 8/31(月)or 9/1(火)の夜が空いていれば夕食にも使える(21時まで営業)。すすきの泊なら徒歩圏</div><div class="i-caution">⚠ クレジットカード不可。行列時は近隣のSuage2・Suage4も選択肢</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">奥芝商店 駅前創成寺店</span><a class="map" href="https://www.google.com/maps/search/奥芝商店+駅前創成寺店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌駅前 · スープカレー · 1,400〜2,000円/人</div>
+<p class="i-why">「元祖えびだしスープカレー」。毎日大量の海老の頭から取る濃厚な海老出汁スープが唯一無二で、道民人気も高い。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00-15:00/17:00-21:00、不定休(月・火の臨時休は要確認)</div><div><b>予約:</b> 基本予約なしの行列店(要確認)</div></div>
+<div class="i-fit">▶ 9/2(水)昼向き。札幌駅周辺で土産購入と組み合わせやすい</div><div class="i-caution">⚠ GARAKU・Suageと合わせて2〜3軒から当日の行列状況で選ぶ運用がおすすめ</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">成吉思汗 だるま 本店</span><a class="map" href="https://www.google.com/maps/search/成吉思汗+だるま+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南5西4) · ジンギスカン · 2,500〜4,000円/人</div>
+<p class="i-why">1954年創業のジンギスカンの聖地。七輪炭火でマトンを焼く昔ながらのスタイル。カウンターのみの店で旅情たっぷり。</p>
+<div class="i-rows"><div><b>営業:</b> 17:00〜深夜(本店は〜翌3:00頃、支店により異なる・要確認)。基本無休</div><div><b>予約:</b> 予約不可。ピーク(18-21時)は長時間待ちあり、支店(4.4二階亭・6.4店など)へ分散可</div></div>
+<div class="i-fit">▶ 8/31(月)or 9/1(火)夜。遅い時間(21時以降)に行くと待ちが短い。夜パフェ前の1軒目に好適</div><div class="i-caution">⚠ 行列必至・煙と匂いが服につくので上着注意。カウンター中心のため4人だと横並びになる</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ジンギスカン ひげのうし 本店</span><a class="map" href="https://www.google.com/maps/search/ジンギスカン+ひげのうし+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南3西5) · ジンギスカン · 3,000〜4,500円/人</div>
+<p class="i-why">生ラム中心で内装もおしゃれなジンギスカン店。だるま系より落ち着いて食べられ、デート利用にも向く。</p>
+<div class="i-rows"><div><b>営業:</b> 17:00-23:30(LO23:00)、定休は年末年始のみ → 月・火とも営業見込み(要確認)</div><div><b>予約:</b> 予約可(電話・Web)。テーブル席あり</div></div>
+<div class="i-fit">▶ 予約できるので8/31(月)夜の本命に。4人前後でも予約で入りやすく友達同伴向き。代替として羊飼いの店『いただきます。』(南5西5、サフォーク直営牧場、予約可・ほぼ無休)も優良</div><div class="i-caution">⚠ 週末は予約推奨。焼肉臭対策は同様に必要</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">海味はちきょう 本店</span><a class="map" href="https://www.google.com/maps/search/海味はちきょう+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南3西2) · 海鮮・居酒屋 · 5,000〜8,000円/人(つっこ飯 小2,990円〜大7,880円)</div>
+<p class="i-why">「おいさー!」の掛け声とともにイクラを丼に盛り続ける名物「つっこ飯」で有名な海鮮居酒屋。演出込みで旅のハイライトになる。</p>
+<div class="i-rows"><div><b>営業:</b> 月-土18:00-24:00(LO23:00)、日祝17:00-23:00。無休(年末年始除く) → 月・火とも営業見込み(要確認)</div><div><b>予約:</b> 電話予約推奨(15時以降受付)。本店はWeb予約不可。人気店のため数日前までに</div></div>
+<div class="i-fit">▶ 8/31(月)or 9/1(火)夜のメイン候補。予約が効くので4人前後の友達グループでも使いやすい</div><div class="i-caution">⚠ つっこ飯は2人なら「小」で十分。観光客価格帯なので注文はほどほどに</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">函館開陽亭 すすきの総本店</span><a class="map" href="https://www.google.com/maps/search/函館開陽亭+すすきの総本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南4西5 東急REIホテルB1) · 海鮮・居酒屋 · 5,000〜8,000円/人(活イカは時価・入荷次第)</div>
+<p class="i-why">活イカの踊り造りと活カニが看板の函館直送海鮮居酒屋。透明なイカ刺しは道外ではなかなか食べられない体験。</p>
+<div class="i-rows"><div><b>営業:</b> 17:00-24:00(LO23:00、日曜は23:30閉店)。年中無休 → 月・火とも営業見込み(要確認)</div><div><b>予約:</b> 電話・Web予約可(一休・ホットペッパー掲載)。個室あり</div></div>
+<div class="i-fit">▶ はちきょうが取れない場合の8/31・9/1夜の代替。予約可・個室ありで4人利用もしやすい</div><div class="i-caution">⚠ 活イカは入荷がない日もあるので当日電話確認が確実(時化の後は特に)</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">夜パフェ専門店 Parfaiteria PaL</span><a class="map" href="https://www.google.com/maps/search/夜パフェ専門店+Parfaiteria+PaL" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">すすきの(南4西2 6F) · 夜パフェ(シメパフェ) · 1,500〜2,200円/人+ワンドリンク制の場合あり</div>
+<p class="i-why">札幌「シメパフェ」文化を牽引する夜パフェ専門店。季節フルーツとハーブを使った芸術的なパフェを飲みの後に。</p>
+<div class="i-rows"><div><b>営業:</b> 18:00-23:30LO(金土・祝前日は翌1:30LO)。不定休(要確認)</div><div><b>予約:</b> 基本並び(状況により整理券)。要確認</div></div>
+<div class="i-fit">▶ 8/31(月)・9/1(火)夜、ジンギスカンや居酒屋の後のシメに。すすきのから徒歩すぐ</div><div class="i-caution">⚠ 22時前後は行列しがち。姉妹店Parfaiteria miL(南2西3)も同コンセプトで分散可</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">パフェ、珈琲、酒、佐藤</span><a class="map" href="https://www.google.com/maps/search/パフェ、珈琲、酒、佐藤" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">大通(南1西2) · 夜パフェ(シメパフェ) · 1,400〜2,000円/人</div>
+<p class="i-why">シメパフェブームの火付け役。塩キャラメルとピスタチオのパフェが看板で、お酒と合わせられる大人のパフェ店。</p>
+<div class="i-rows"><div><b>営業:</b> 13:00-23:30LO(金土・祝前日〜24:30LO)。不定休(要確認)</div><div><b>予約:</b> 予約不可・行列店。系列の佐藤堂(大丸札幌)は昼利用可</div></div>
+<div class="i-fit">▶ 9/1(火)夜のシメ、または昼過ぎのカフェ利用も可(13時開店)。PaLとどちらか1軒で十分</div><div class="i-caution">⚠ 閉店間際でも並ぶことがある。2人ならカウンターで入りやすい</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">海鮮食堂 北のグルメ亭</span><a class="map" href="https://www.google.com/maps/search/海鮮食堂+北のグルメ亭" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌場外市場(中央卸売市場そば) · 朝食・海鮮丼 · 朝食で2,000〜4,000円/人(海鮮丼)</div>
+<p class="i-why">場外市場の老舗海鮮食堂。朝7時から新鮮な海鮮丼が食べられ、320席の大箱で回転も早い。市場散策とセットで楽しい。</p>
+<div class="i-rows"><div><b>営業:</b> 7:00-15:00(LO14:30)。年中無休 → 9/2(水)朝も営業見込み(要確認)</div><div><b>予約:</b> 予約不要(大箱)。団体もOKで4人でも入りやすい</div></div>
+<div class="i-fit">▶ 9/2(水)朝に最適。レンタカーがあるので中心部から10分・駐車場あり。食後に市場で土産(カニ・メロン)購入も</div><div class="i-caution">⚠ 二条市場のどんぶり茶屋と役割が重複するのでどちらか一方に。観光地価格ではある</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">サンドイッチ工房 サンドリア 本店</span><a class="map" href="https://www.google.com/maps/search/サンドイッチ工房+サンドリア+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">札幌・山鼻(南8西9) · 朝食・モーニング(テイクアウト) · 1個300〜500円、2人で1,000円前後</div>
+<p class="i-why">1978年創業・24時間営業の老舗サンドイッチ専門店。名物ダブルエッグなど常時40種以上。地元民に愛されるB級名店。</p>
+<div class="i-rows"><div><b>営業:</b> 24時間営業・年中無休 → 早朝でも確実に買える</div><div><b>予約:</b> 予約不要(テイクアウト専門)</div></div>
+<div class="i-fit">▶ 9/2(水)朝、ホテル出発前や空港へのドライブ用に。海鮮丼の気分でない朝の軽い選択肢</div><div class="i-caution">⚠ イートインなし。人気商品は時間帯により売切れ</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">Picante(ピカンティ) 本店</span><a class="map" href="https://www.google.com/maps/search/Picante" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">北大前(北13西3) · スープカレー · 1,300〜1,700円/人</div>
+<p class="i-why">ミシュランガイド北海道掲載のスープカレー店。スープが選べる方式で、開闢(かいびゃく)スープが人気。学生街で行列が比較的マイルド。</p>
+<div class="i-rows"><div><b>営業:</b> 11:30-21:45。年中無休 → 月・火・水いずれも営業見込み(要確認)</div><div><b>予約:</b> ホットペッパーでネット予約可(店舗による・要確認)</div></div>
+<div class="i-fit">▶ GARAKU/Suageが大行列だった場合の代替。ネット予約できる点で4人前後の友達グループにも向く。札幌駅前店もあり</div><div class="i-caution">⚠ 本店は中心部から少し北(車で10分弱)。駐車場は近隣コインパーキング</div></div>
+<div class="notes"><b>チームメモ:</b> 食事枠への当てはめ(案): 8/31(月)夜=ジンギスカン(ひげのうし予約 or だるま)+シメパフェPaL / 9/1(火)夜=海鮮居酒屋(はちきょう要電話予約、代替は開陽亭)+シメパフェ佐藤 / 9/2(水)朝=北のグルメ亭(場外市場)またはサンドリア、昼=スープカレー(GARAKU・Suage+・奥芝から行列状況で選択、確実性重視ならPicante予約)。今回の候補は月曜・火曜定休の店を避けて「無休・不定休」中心に選定したが、不定休の店(GARAKU・奥芝・PaL・佐藤)は臨時休業があり得るため訪問前にSNS/公式で要確認。だるま本店の深夜営業時間は情報源により異なり要確認。主な情報源: 公式サイト(s-garaku.com, suage.info, okushiba.net, higenoushi.com, hachikyo.com, kaiyoutei.co.jp, kitanogurume.co.jp, s-sandwich.com, picante2009.com)、ホットペッパーグルメ、るるぶ&amp;more、ようこそさっぽろ(sapporo.travel)。</div>
+<h2 style="--c:var(--d2);--cs:var(--d2-soft)"><span class="chip">小樽・余市</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">おたる政寿司 本店</span><a class="map" href="https://www.google.com/maps/search/おたる政寿司+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・寿司屋通り · 寿司(夕食) · 夜1人 約5,000〜10,000円 · 食べログ3.5前後(要確認)</div>
+<p class="i-why">小樽寿司の代名詞的老舗(創業80余年)。地物中心の握りセットが看板で、観光利用でも安定感のある本命候補。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00-15:00/17:00-21:00(LO20:30)、定休日は水曜。9/1(火)夜は営業(祝日等で変動の場合あり・要確認)。8/30(日)も営業。</div><div><b>予約:</b> 公式サイト・電話で予約可。9/1夜は予約推奨。</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽の夕食 本命</div><div class="i-caution">⚠ 本店以外に「ぜん庵」もあり(こちらも水曜定休)。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">伊勢鮨</span><a class="map" href="https://www.google.com/maps/search/伊勢鮨" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・稲穂(駅から徒歩圏) · 寿司(夕食) · 夜1人 約10,000〜15,000円 · 食べログ3.8前後・ミシュラン一つ星(要確認)</div>
+<p class="i-why">ミシュラン一つ星の小樽トップ格。本来なら最有力だが、定休日が「毎週水曜+第1・2・3火曜」のため、9/1は第1火曜=休みの可能性が極めて高い。</p>
+<div class="i-rows"><div><b>営業:</b> 11:30-15:00/17:00-21:00。9/1(火)は第1火曜のため休業見込み(振替の例外もあるため電話で要確認 0134-23-1425)。</div><div><b>予約:</b> 2カ月先まで予約受付(公式サイト・電話)。駅構内の「駅中店」は立ち食いで別営業。</div></div>
+<div class="i-fit">▶ 9/1は不可見込み。日程変更時の候補として記載</div><div class="i-caution">⚠ 9/1休業見込みが比較のポイント。行くなら要電話確認。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">小樽 日本橋</span><a class="map" href="https://www.google.com/maps/search/小樽+日本橋" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・寿司屋通り · 寿司(夕食) · 夜1人 約6,000〜10,000円 · 食べログ3.5前後(要確認)</div>
+<p class="i-why">寿司屋通りの実力店で政寿司と並ぶ定番。生ちらし・地物握りが評判で、政寿司より落ち着いた雰囲気。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00-15:00/17:00-20:30(LO20:00)、定休日は木曜+第1・3水曜。9/1(火)夜は営業見込み(臨時休業あり・要確認)。</div><div><b>予約:</b> 電話予約可・推奨。</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽の夕食 対抗候補</div><div class="i-caution">⚠ 夜LOが20:00と早めなので入店は19時頃までに。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">魚真(うおまさ)</span><a class="map" href="https://www.google.com/maps/search/魚真" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・稲穂(小樽駅徒歩6分) · 寿司・海鮮居酒屋(夕食) · 夜1人 約4,000〜7,000円 · 食べログ3.5前後(要確認)</div>
+<p class="i-why">鮮魚店直営で地元客人気が高いコスパ枠。握りに加え刺身・焼き物など居酒屋使いもでき、観光価格の店より割安。</p>
+<div class="i-rows"><div><b>営業:</b> 12:00-14:00/16:00-21:30、定休日は日曜。9/1(火)夜は営業見込み(要確認)。</div><div><b>予約:</b> 電話予約可(0134-29-0259)。人気店のため予約推奨。無料駐車場あり。</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽の夕食 コスパ候補</div><div class="i-caution">⚠ 駅側エリアで堺町通りからは少し歩く。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">北菓楼 小樽本館</span><a class="map" href="https://www.google.com/maps/search/北菓楼+小樽本館" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・堺町通り · 食べ歩きスイーツ · シュークリーム 250円前後 · -</div>
+<p class="i-why">バウムクーヘン「妖精の森」の店。食べ歩きなら大きなシュークリーム「北の夢ドーム(夢不思議)」やソフトクリームが名物。</p>
+<div class="i-rows"><div><b>営業:</b> 9:00-18:00頃・基本無休(季節変動あり・要確認)。9/1(火)営業見込み。</div><div><b>予約:</b> 不要</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽散策時のおやつ</div><div class="i-caution">⚠ 六花亭と隣接しており食べ比べしやすい。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">六花亭 小樽運河店</span><a class="map" href="https://www.google.com/maps/search/六花亭+小樽運河店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・堺町通り · 食べ歩きスイーツ · 雪こんチーズ 200円台 · -</div>
+<p class="i-why">店舗限定の焼きたて「雪こんチーズ」(ビスケット+ベイクドチーズ)が名物。マルセイアイスサンドも食べ歩き向き。</p>
+<div class="i-rows"><div><b>営業:</b> 9:00-18:00頃・基本無休(要確認)。9/1(火)営業見込み。</div><div><b>予約:</b> 不要</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽散策時のおやつ</div><div class="i-caution">⚠ 2Fイートインの有無は時期により変動(要確認)。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">桑田屋 小樽本店(ぱんじゅう)</span><a class="map" href="https://www.google.com/maps/search/桑田屋+小樽本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・運河近く(小樽運河ターミナル内) · 食べ歩き軽食 · 1個 100円前後 · -</div>
+<p class="i-why">小樽名物「ぱんじゅう」の老舗。外はサクッと中はもっちり生地にあんこやクリームが入る一口サイズで、食べ歩きにちょうどいい。</p>
+<div class="i-rows"><div><b>営業:</b> 10:00-18:00頃(要確認)。9/1(火)営業見込み。</div><div><b>予約:</b> 不要</div></div>
+<div class="i-fit">▶ 9/1(火) 運河〜堺町通り散策の合間</div><div class="i-caution">⚠ 小ぶりなので数種類買って食べ比べがおすすめ。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">あまとう 本店</span><a class="map" href="https://www.google.com/maps/search/あまとう+本店" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">小樽・都通り商店街(駅寄り) · 老舗喫茶・スイーツ · クリームぜんざい 700円前後 · -</div>
+<p class="i-why">昭和4年創業の老舗洋菓子店。銘菓「マロンコロン」と2F喫茶の「クリームぜんざい」が名物。堺町通りの混雑を避けて座って休憩できる。</p>
+<div class="i-rows"><div><b>営業:</b> 10:00-18:00頃、木曜定休が通例(要確認)。9/1(火)営業見込み。</div><div><b>予約:</b> 不要</div></div>
+<div class="i-fit">▶ 9/1(火) 小樽でのカフェ休憩</div><div class="i-caution">⚠ 堺町通りからは徒歩10分弱。マロンコロンは土産にも◎。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ニッカウヰスキー 北海道余市蒸溜所</span><a class="map" href="https://www.google.com/maps/search/ニッカウヰスキー+北海道余市蒸溜所" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">余市(余市駅前・小樽から車約30分) · 蒸溜所見学 · 見学無料(有料テイスティングは別途) · -</div>
+<p class="i-why">『マッサン』の舞台。石造りの蒸溜棟群が美しく、無料ガイドツアー(約70-90分)は試飲付き。カップルの立ち寄り先として鉄板。</p>
+<div class="i-rows"><div><b>営業:</b> 9:15-16:15頃(最終入場15:30)、ツアーは9:00-15:00台に30分毎。9/1(火)は年末年始以外基本営業(要確認)。</div><div><b>予約:</b> 見学は事前予約制(公式サイト、希望日の1カ月前から受付=9/1分はすでに受付中)。予約なし入場の可否は情報が割れており要確認。早めの予約を強く推奨。運転者は試飲不可(ノンアル・ドライバー用対応あり)。</div></div>
+<div class="i-fit">▶ 9/1(火) ニセコ→積丹→小樽の道中</div><div class="i-caution">⚠ 神威岬の後だと最終ツアー(15:00-15:30)に間に合わない恐れ。行くなら「ニセコ→余市(ランチ+見学)→神威岬→小樽」への順路入替も検討を。レンタカーのため試飲は同乗者のみ。</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">柿崎商店 海鮮工房</span><a class="map" href="https://www.google.com/maps/search/柿崎商店+海鮮工房" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">余市(余市駅前・ニッカ蒸溜所の目の前) · 海鮮食堂(ランチ) · 海鮮丼 1,000〜2,000円台 · 食べログ3.5前後(要確認)</div>
+<p class="i-why">水産会社直営の余市名物食堂。丼からはみ出す海鮮丼やウニ丼・甘エビ丼が観光地とは思えない良心価格で、地元民も並ぶ人気店。</p>
+<div class="i-rows"><div><b>営業:</b> 10:00-18:00(LO17:30)、木曜定休。9/1(火)は営業見込み(季節変動あり・要確認)。</div><div><b>予約:</b> 予約不可・行列必至(昼ピークは30分以上待ちも)。</div></div>
+<div class="i-fit">▶ 9/1(火) 余市での昼食(ニッカ見学とセット)</div><div class="i-caution">⚠ 1Fは鮮魚・物販、食堂は2F。ピーク(11:30-13:00)を外すと待ちが短い。</div></div>
+<div class="notes"><b>チームメモ:</b> 要点: (1) 9/1(火)の小樽夜寿司は「政寿司本店(水曜定休)」「日本橋(木曜・第1/3水曜定休)」「魚真(日曜定休)」が営業見込みで、本命は政寿司本店。伊勢鮨は第1〜3火曜定休のため9/1(第1火曜)は休業見込みで比較外(振替例外の可能性のみ電話要確認)。いずれも臨時休業の可能性があるため直前確認推奨。(2) 余市ニッカは事前予約制の無料ガイドツアー(約70-90分、最終15:00-15:30発)。9/1分は予約受付中のため早めに公式サイトで予約を。現行の「ニセコ→神威岬→小樽」順だと余市到着が夕方になりツアーに間に合わない恐れがあるため、「ニセコ→余市(柿崎商店ランチ+ニッカ見学)→神威岬→小樽」の順路が現実的。レンタカーのため試飲はドライバー不可。(3) 食べ歩きは堺町通りに北菓楼/六花亭が隣接、運河側に桑田屋、駅側にあまとう本店と動線良好。主な情報源: masazushi.co.jp(公式)、isezushi.com(公式)、otaru.gr.jp(小樽観光協会)、distillery.nikka.com(ニッカ公式予約)、yoichi-kankoukyoukai.com(余市観光協会)、じゃらんニュース・食べログ等。営業時間・定休日は2026年8月時点の検索情報で、祝日振替や臨時休業は各店に要確認。</div>
+<h2 style="--c:var(--d3);--cs:var(--d3-soft)"><span class="chip">積丹・ニセコ</span></h2>
+<div class="item">
+<div class="i-head"><span class="i-name">食堂うしお</span><a class="map" href="https://www.google.com/maps/search/食堂うしお" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">積丹町神岬町(神威岬駐車場入口すぐ) · 海鮮食堂(うに丼・海鮮丼) · うにいくら丼4,000〜5,000円前後、海鮮丼2,000〜3,000円前後(時価変動) · 食べログ3.5前後(要確認)</div>
+<p class="i-why">神威岬の駐車場入口に構えるウニ漁師直営の食堂で、立地は神威岬観光とセットで最強。名物うにいくら丼や生うに丼、いくら丼・ほっけ定食など。</p>
+<div class="i-rows"><div><b>営業:</b> 4月〜11月営業・期間中無休(9/1火は営業見込み)。目安10:00〜16:00頃。※積丹のウニ漁は6月中旬〜8月下旬のため9/1の『生うに丼』提供は終了の可能性大(要確認)</div><div><b>予約:</b> 予約不可(昼時は行列必至、早め到着推奨)</div></div>
+<div class="i-fit">▶ 9/1(火)昼: 神威岬観光の直前・直後のランチに最適</div><div class="i-caution">⚠ 生うには漁期(〜8月末)限定。9/1はいくら丼・海鮮丼中心になる可能性が高い。電話(公式サイト記載)で当日のうに提供有無を要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">お食事処 積丹の幸 みさき</span><a class="map" href="https://www.google.com/maps/search/お食事処+積丹の幸+みさき" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">積丹町日司町(神威岬から車約15分) · 海鮮食堂(うに漁師直営) · 生うに丼(漁期)4,500〜5,500円前後、その他丼1,500〜3,000円前後 · 食べログ3.6前後・積丹トップクラスの人気(要確認)</div>
+<p class="i-why">うに漁師直営の積丹屈指の人気店。漁期中はご飯が見えないほど盛る生うに丼が名物で、ヒラメ漬け丼など季節の海鮮丼も評価が高い。</p>
+<div class="i-rows"><div><b>営業:</b> 2026年は4/28〜10月末営業、9:00〜15:00。定休は第2・4水曜(9/1火は営業見込み)。※生うに丼は漁期のみ、9/1提供は要確認</div><div><b>予約:</b> 基本予約不可・行列店(要確認)</div></div>
+<div class="i-fit">▶ 9/1(火)昼: 神威岬→積丹半島東回りで小樽方面へ向かう途中のランチ</div><div class="i-caution">⚠ 9/1は禁漁直後のため生うには終了濃厚。塩水うにや他メニューの提供状況を電話で要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">中村屋</span><a class="map" href="https://www.google.com/maps/search/中村屋" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">積丹町美国町(積丹半島の入口側、小樽方面寄り) · 海鮮食堂 · うに丼5,000円前後(時価)、海鮮丼・定食1,500〜3,000円前後 · 食べログ3.5前後(要確認)</div>
+<p class="i-why">美国の老舗海鮮食堂。うに丼のほか、ぶっかけ丼(海鮮丼)や焼き魚定食も充実しており、ウニ漁期外でも満足度が高い。</p>
+<div class="i-rows"><div><b>営業:</b> 8:00〜16:00(季節変動あり)。定休日は9月は木曜のため9/1(火)は営業見込み(要確認)</div><div><b>予約:</b> 予約可否は要確認</div></div>
+<div class="i-fit">▶ 9/1(火)昼: 神威岬から小樽へ戻る途中(美国)でのランチ</div><div class="i-caution">⚠ 生うには漁期限定。9月のメニュー内容は要確認</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">海鮮寿司居酒屋 幸寿司</span><a class="map" href="https://www.google.com/maps/search/海鮮寿司居酒屋+幸寿司" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">岩内町万代(岩内バスターミナル周辺) · 寿司・海鮮 · ランチ約1,400円、にぎり・丼1,500〜3,000円前後 · Retty/食べログで岩内上位(要確認)</div>
+<p class="i-why">岩内前浜の新鮮なネタを使う地元人気の寿司店。ランチタイムサービス(約1,400円)がコスパ良好で、積丹の観光地価格より手頃に海鮮を楽しめる。</p>
+<div class="i-rows"><div><b>営業:</b> ランチ11:00〜14:00。定休日は要確認(火曜営業か電話確認推奨)</div><div><b>予約:</b> 予約可(電話0135-62-8721、要確認)</div></div>
+<div class="i-fit">▶ 9/1(火)昼: ニセコ→神威岬の途中(岩内経由ルート)で早めのランチにする場合の選択肢</div><div class="i-caution">⚠ ニセコ→神威岬を岩内経由で走る場合のみ動線に乗る。11時開店なので時間配分に注意</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ニセコ高橋牧場 ミルク工房</span><a class="map" href="https://www.google.com/maps/search/ニセコ高橋牧場+ミルク工房" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">ニセコ町曽我(ニセコビレッジ近く、羊蹄山ビュー) · スイーツ・カフェ(牧場直営) · シュークリーム・ソフト各300〜500円程度 · ニセコ定番の人気スポット</div>
+<p class="i-why">ニセコ定番の牧場直営スイーツ。搾りたて牛乳のシュークリーム、のむヨーグルト、ソフトクリームが名物で、羊蹄山を望む芝生ロケーションも抜群。</p>
+<div class="i-rows"><div><b>営業:</b> 夏季9:30〜18:00頃(季節変動あり)。定休は1/1のみで9/1(火)営業見込み</div><div><b>予約:</b> 不要</div></div>
+<div class="i-fit">▶ 9/1(火)朝〜午前: 札幌からニセコ到着後の最初の立ち寄りスポット</div><div class="i-caution">⚠ 敷地内にチーズ工房・カフェ等も併設。時間があれば合わせて</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">ニセコ高橋牧場 レストラン PRATIVO(プラティーヴォ)</span><a class="map" href="https://www.google.com/maps/search/ニセコ高橋牧場+レストラン+PRATIVO" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">ニセコ町曽我(ミルク工房と同敷地) · 野菜ビュッフェレストラン · ランチビュッフェ2,000円前後(要確認) · 4travel・ぐるなびで高評価</div>
+<p class="i-why">地元野菜の惣菜ビュッフェ+メイン(ローストポーク等)を選ぶ形式のランチが人気。窓一面に羊蹄山が広がる眺望も魅力。</p>
+<div class="i-rows"><div><b>営業:</b> ランチ11:00〜16:00(L.O.15:00)、定休なし(9/1火営業見込み)</div><div><b>予約:</b> 予約可(ぐるなび等、要確認)</div></div>
+<div class="i-fit">▶ 9/1(火)昼: ただし当日の昼は積丹で海鮮予定のため、ニセコ滞在を長くする場合や積丹が雨天時の代替ランチ向き</div><div class="i-caution">⚠ 海鮮ランチと重ならないよう、旅程上は代替・軽めの利用を推奨</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">手打蕎麦 いちむら</span><a class="map" href="https://www.google.com/maps/search/手打蕎麦+いちむら" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">倶知安町山田(ヒラフ坂下) · そば · 1,000〜2,000円程度 · 食べログ3.6前後・ニセコそば人気No.1級(要確認)</div>
+<p class="i-why">ニセコを代表する手打蕎麦の名店(ミシュラン掲載歴あり)。北海道産そば粉の二八・十割、天ぷらとのセットが人気。</p>
+<div class="i-rows"><div><b>営業:</b> 11:00〜15:00(売切次第終了)。定休は年末年始のみ→9/1(火)営業見込み(要確認)</div><div><b>予約:</b> 予約不可・開店前から並ぶことあり</div></div>
+<div class="i-fit">▶ 9/1(火)昼: ニセコ出発を遅らせる場合の早めランチ(11時開店)候補</div><div class="i-caution">⚠ 売切終いのため早めの訪問を。積丹海鮮と両立するなら量の配分に注意</div></div>
+<div class="item">
+<div class="i-head"><span class="i-name">グラウビュンデン(Graubünden)</span><a class="map" href="https://www.google.com/maps/search/グラウビュンデン" target="_blank" rel="noopener">地図</a></div>
+<div class="i-meta">倶知安町山田(ヒラフ) · カフェ(サンドイッチ・スイーツ) · サンドイッチ・ケーキ+ドリンクで1,000〜2,000円程度 · 北海道Likers等メディア掲載多数・ヒラフ定番</div>
+<p class="i-why">在住外国人にも愛される老舗カフェ。30種以上のボリュームサンドイッチと手作りケーキが名物で、朝8時から営業しているのが旅程的に貴重。</p>
+<div class="i-rows"><div><b>営業:</b> 8:00〜17:00(L.O.16:30)。定休は水・木曜→9/1(火)は営業見込み(要確認)</div><div><b>予約:</b> 不要(混雑時は待ちあり)</div></div>
+<div class="i-fit">▶ 9/1(火)朝: 札幌を早出してニセコで朝食・モーニングコーヒーに最適</div><div class="i-caution">⚠ 定休日が『水曜(8月より)・木曜』と変則的なため、直前に営業日を要確認</div></div>
+<div class="notes"><b>チームメモ:</b> 【生ウニの結論】積丹のウニ漁期は例年6/1〜8/31(地区により6月中旬解禁〜8月下旬終了)。9/1(火)は禁漁入り直後のため「積丹産の生うに丼」は原則終了。店舗によっては直前水揚げの塩水ウニや他産地(噴火湾・利尻など)のウニを出す場合があるが、いずれも当日の提供有無は各店に電話で要確認。生ウニ最優先なら旅程初日(8/30)は漁期内だが富良野方面のため両立不可。【火曜定休の注意】積丹の有名店「お食事処 鱗晃」は火曜定休のため9/1は除外。ニセコの「そば処 楽一」は水木定休で9/1は営業するが席数極少・昼は行列のため今回は次点扱い。【動線】9/1はニセコ(朝: グラウビュンデン or ミルク工房)→岩内経由(早昼なら幸寿司)→神威岬(うしお)→美国(みさき/中村屋)→小樽の順で無理なく組める。価格は2025-26年時点の目安、時価変動あり。</div>
+<p class="src">※ 価格・営業時間・空室は2026年8月時点の調査に基づく目安です。予約前に公式サイト・予約サイトで最新情報をご確認ください。</p>
+</div>
+</body>
+</html>
