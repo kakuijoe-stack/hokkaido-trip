@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2C7DA0">
+<title>北海道 3泊4日 旅のしおり</title>
+<style>
+:root{
+  --bg:#F4F7F8;
+  --card:#FFFFFF;
+  --ink:#20303A;
+  --sub:#5D6E78;
+  --line:#DCE4E8;
+  --accent:#2C7DA0;      /* 青い池ブルー */
+  --accent-soft:#E3EEF4;
+  --warn-bg:#FBF1E6;
+  --warn-ink:#8A5A1E;
+  --warn-line:#EAD3B4;
+  --d1:#7C6BAF; --d1-soft:#EEEAF7;  /* 富良野ラベンダー */
+  --d2:#2C7DA0; --d2-soft:#E3EEF4;  /* 青い池 */
+  --d3:#4A7C59; --d3-soft:#E7F1EA;  /* ニセコの緑 */
+  --d4:#A85B32; --d4-soft:#F7EBE3;  /* 札幌グルメ */
+  --done:#9AAAB3;
+  --shadow:0 1px 3px rgba(32,48,58,.08);
+  --land:#E7EDEB; --coast:#B9C8C5; --sea:#EDF3F5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#141B20; --card:#1D262C; --ink:#E4EBEF; --sub:#93A4AE;
+    --line:#31404A; --accent:#5FA8C7; --accent-soft:#22333D;
+    --warn-bg:#332818; --warn-ink:#E4B877; --warn-line:#4D3D22;
+    --d1:#A695D6; --d1-soft:#2A2438; --d2:#5FA8C7; --d2-soft:#1E313C;
+    --d3:#7FAF8E; --d3-soft:#22312A; --d4:#D08A5E; --d4-soft:#38291F;
+    --done:#5D6E78; --shadow:0 1px 3px rgba(0,0,0,.3);
+    --land:#2A3A3C; --coast:#4A5E60; --sea:#18232A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141B20; --card:#1D262C; --ink:#E4EBEF; --sub:#93A4AE;
+  --line:#31404A; --accent:#5FA8C7; --accent-soft:#22333D;
+  --warn-bg:#332818; --warn-ink:#E4B877; --warn-line:#4D3D22;
+  --d1:#A695D6; --d1-soft:#2A2438; --d2:#5FA8C7; --d2-soft:#1E313C;
+  --d3:#7FAF8E; --d3-soft:#22312A; --d4:#D08A5E; --d4-soft:#38291F;
+  --done:#5D6E78; --shadow:0 1px 3px rgba(0,0,0,.3);
+  --land:#2A3A3C; --coast:#4A5E60; --sea:#18232A;
+}
+:root[data-theme="light"]{
+  --bg:#F4F7F8; --card:#FFFFFF; --ink:#20303A; --sub:#5D6E78;
+  --line:#DCE4E8; --accent:#2C7DA0; --accent-soft:#E3EEF4;
+  --warn-bg:#FBF1E6; --warn-ink:#8A5A1E; --warn-line:#EAD3B4;
+  --d1:#7C6BAF; --d1-soft:#EEEAF7; --d2:#2C7DA0; --d2-soft:#E3EEF4;
+  --d3:#4A7C59; --d3-soft:#E7F1EA; --d4:#A85B32; --d4-soft:#F7EBE3;
+  --done:#9AAAB3; --shadow:0 1px 3px rgba(32,48,58,.08);
+  --land:#E7EDEB; --coast:#B9C8C5; --sea:#EDF3F5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 96px}
+header{padding:28px 0 12px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+h1{margin:4px 0 2px;font-size:26px;font-weight:800;letter-spacing:.01em;text-wrap:balance}
+.dates{color:var(--sub);font-size:13px}
+.flightbar{display:flex;gap:8px;margin-top:14px}
+.flight{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:10px 12px;box-shadow:var(--shadow)}
+.flight .fl-label{font-size:10px;letter-spacing:.14em;color:var(--sub);font-weight:700}
+.flight .fl-route{font-weight:800;font-size:15px;margin-top:2px;font-variant-numeric:tabular-nums}
+.flight .fl-note{font-size:11px;color:var(--sub);font-variant-numeric:tabular-nums}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);padding:10px 0 8px;
+  display:flex;gap:6px;overflow-x:auto}
+nav button{flex:1;white-space:nowrap;border:1px solid var(--line);background:var(--card);
+  color:var(--sub);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;
+  cursor:pointer;font-family:inherit}
+nav button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section{display:none}
+section.on{display:block}
+h2{font-size:15px;font-weight:800;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .chip{font-size:11px;padding:2px 9px;border-radius:999px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);overflow:hidden}
+.daycard{margin-bottom:8px}
+.dayhead{padding:14px 16px 10px;border-left:4px solid var(--dc,var(--accent))}
+.dayhead .d-date{font-size:12px;color:var(--sub);font-weight:700}
+.dayhead .d-title{font-size:17px;font-weight:800;margin-top:1px}
+.dayhead .d-stay{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;
+  color:var(--dc,var(--accent));background:var(--dcs,var(--accent-soft));
+  padding:2px 10px;border-radius:999px}
+.tl{padding:6px 16px 14px;border-left:4px solid var(--dc,var(--accent))}
+.tl-row{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:7px 0;
+  border-top:1px dashed var(--line)}
+.tl-row:first-child{border-top:none}
+.tl-time{font-weight:800;font-size:13px;color:var(--dc,var(--accent));
+  font-variant-numeric:tabular-nums;padding-top:1px}
+.tl-what{font-size:14px}
+.tl-what b{font-weight:700}
+.tl-sub{font-size:12px;color:var(--sub);margin-top:1px}
+.tl-move{font-size:12px;color:var(--sub)}
+.tl-move .tl-time{color:var(--sub);font-weight:600}
+a.map{color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}
+a.map:hover{text-decoration:underline}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);
+  border-radius:10px;padding:10px 14px;font-size:13px;margin:10px 0}
+.warn b{font-weight:800}
+ul.plain{list-style:none;margin:0;padding:0}
+.check{display:flex;gap:12px;align-items:flex-start;padding:11px 16px;
+  border-top:1px solid var(--line);cursor:pointer}
+.check:first-child{border-top:none}
+.check input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
+.check .c-main{font-size:14px;font-weight:600}
+.check .c-sub{font-size:12px;color:var(--sub);margin-top:1px}
+.check.done .c-main{color:var(--done);text-decoration:line-through}
+.check.done .c-sub{color:var(--done)}
+.src{margin:34px 0 0;font-size:11px;color:var(--sub);line-height:1.8}
+.src b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 12px;border-top:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.08em;color:var(--sub);border-top:none}
+.tablewrap{overflow-x:auto}
+.plancard{margin-bottom:12px}
+.planhead{padding:13px 16px 8px;border-left:4px solid var(--pc,var(--accent))}
+.planhead .p-name{font-size:16px;font-weight:800}
+.planhead .p-tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;
+  background:var(--pc,var(--accent));padding:2px 10px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.planhead .p-stay{font-size:12px;color:var(--sub);margin-top:2px}
+.plan-days{padding:2px 16px 8px;border-left:4px solid var(--pc,var(--accent))}
+.plan-days .tl-row{grid-template-columns:44px 1fr}
+.plan-pm{display:flex;flex-wrap:wrap;gap:6px;padding:4px 16px 14px;border-left:4px solid var(--pc,var(--accent))}
+.pm{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+.pm.ok{background:var(--d3-soft);color:var(--d3)}
+.pm.ng{background:var(--warn-bg);color:var(--warn-ink)}
+.mapcard{padding:10px 10px 4px}
+.mapcard svg{display:block;width:100%;height:auto}
+.map-toggle{display:flex;gap:6px;padding:4px 6px 10px;justify-content:center}
+.map-toggle button{border:1px solid var(--line);background:var(--card);color:var(--sub);
+  border-radius:999px;padding:5px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.map-toggle button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.map-toggle button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pin-dot{cursor:pointer}
+.pin-dot circle.halo{fill:none;stroke-width:0;opacity:0}
+.pin-dot.sel circle.halo{stroke-width:10;opacity:.25}
+.pin-num{font-size:11px;font-weight:800;fill:#fff;text-anchor:middle;pointer-events:none}
+.ref-label{font-size:12px;fill:var(--sub);opacity:.75}
+.maplegend .check{cursor:pointer}
+.maplegend .num{flex-shrink:0;width:22px;height:22px;border-radius:50%;color:#fff;
+  font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.maplegend .check.sel{background:var(--accent-soft)}
+@media (prefers-reduced-motion: no-preference){
+  section.on{animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">2026 . 08 . 30 — 09 . 02</div>
+  <h1>北海道 3泊4日 旅のしおり</h1>
+  <div class="dates">富良野・美瑛 → 札幌 → ニセコ・積丹・小樽 → 札幌</div>
+  <div class="flightbar">
+    <div class="flight">
+      <div class="fl-label">往路 8/30(日)</div>
+      <div class="fl-route">HND 12:00 → CTS 13:35</div>
+      <div class="fl-note">ANA NH63</div>
+    </div>
+    <div class="flight">
+      <div class="fl-label">復路 9/2(水)</div>
+      <div class="fl-route">CTS 20:30 → HND 22:10</div>
+      <div class="fl-note">ANA NH82</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <button data-tab="itinerary" class="on">旅程</button>
+  <button data-tab="plans">プラン5案</button>
+  <button data-tab="map">マップ</button>
+  <button data-tab="todo">確認事項</button>
+  <button data-tab="spots">スポット</button>
+  <button data-tab="prep">準備リスト</button>
+  <button data-tab="notes">メモ・注意</button>
+</nav>
+
+<!-- ══════════ 旅程 ══════════ -->
+<section id="itinerary" class="on">
+
+<div class="card daycard" style="--dc:var(--d1);--dcs:var(--d1-soft)">
+  <div class="dayhead">
+    <div class="d-date">DAY 1 — 8/30(日)</div>
+    <div class="d-title">新千歳 → 富良野へ</div>
+    <span class="d-stay">泊:富良野</span>
+  </div>
+  <div class="tl">
+    <div class="tl-row"><div class="tl-time">13:35</div><div class="tl-what"><b>新千歳空港 着</b>(NH63)<div class="tl-sub">レンタカー受け取り(送迎バス込みで〜30分見ておく)</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">14:30</div><div class="tl-what">🚗 道東道・占冠IC経由で富良野へ(約3時間)。途中、道の駅で休憩</div></div>
+    <div class="tl-row"><div class="tl-time">17:30</div><div class="tl-what"><b>富良野 着・ホテルチェックイン</b><div class="tl-sub">宿は新富良野プリンス周辺が翌朝も動きやすい</div></div></div>
+    <div class="tl-row"><div class="tl-time">18:30</div><div class="tl-what"><b>夕食</b>(富良野市街 or ホテル)<div class="tl-sub">富良野オムカレーなどご当地グルメも</div></div></div>
+    <div class="tl-row"><div class="tl-time">19:45</div><div class="tl-what"><b>ニングルテラス</b> 夜の散策 <a class="map" href="https://www.google.com/maps/search/ニングルテラス" target="_blank" rel="noopener">地図</a><div class="tl-sub">〜20:45(8月営業時間)。日没後のライトアップが幻想的</div></div></div>
+  </div>
+</div>
+
+<div class="card daycard" style="--dc:var(--d2);--dcs:var(--d2-soft)">
+  <div class="dayhead">
+    <div class="d-date">DAY 2 — 8/31(月)</div>
+    <div class="d-title">美瑛観光 → 夜は札幌</div>
+    <span class="d-stay">泊:札幌</span>
+  </div>
+  <div class="tl">
+    <div class="tl-row"><div class="tl-time">8:30</div><div class="tl-what"><b>ホテル出発</b></div></div>
+    <div class="tl-row"><div class="tl-time">9:00</div><div class="tl-what"><b>青い池</b> <a class="map" href="https://www.google.com/maps/search/青い池+美瑛" target="_blank" rel="noopener">地図</a><div class="tl-sub">午前が空いていて水面もきれい。駐車場 普通車¥1,000。近くの白ひげの滝もセットで</div></div></div>
+    <div class="tl-row"><div class="tl-time">10:30</div><div class="tl-what"><b>美瑛放牧酪農場</b> <a class="map" href="https://www.google.com/maps/search/美瑛放牧酪農場" target="_blank" rel="noopener">地図</a><div class="tl-sub">10:00〜17:00・入場無料。ソフトクリーム(カップ¥400/コーン¥500)</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">11:30</div><div class="tl-what">🚗 中富良野・ひつじの丘へ(約40分)</div></div>
+    <div class="tl-row"><div class="tl-time">12:15</div><div class="tl-what"><b>ひつじの丘 本店</b> ジンギスカンランチ <a class="map" href="https://www.google.com/maps/search/ひつじの丘+中富良野" target="_blank" rel="noopener">地図</a><div class="tl-sub">11:00〜15:00(LO14:30)・予約不可。混んでいたら先に周辺を回って14時前に</div></div></div>
+    <div class="tl-row"><div class="tl-time">13:45</div><div class="tl-what"><b>パッチワークの路・丘めぐりドライブ</b>(時間があれば)<div class="tl-sub">セブンスターの木、ケンとメリーの木など</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">14:30</div><div class="tl-what">🚗 札幌へ(三笠IC経由・約2時間40分)</div></div>
+    <div class="tl-row"><div class="tl-time">17:30</div><div class="tl-what"><b>札幌ホテル チェックイン</b></div></div>
+    <div class="tl-row"><div class="tl-time">19:00</div><div class="tl-what"><b>夕食:ラーメン</b>(すみれ本店/雪風/輝風 など)<a class="map" href="https://www.google.com/maps/search/すみれ+札幌本店" target="_blank" rel="noopener">地図</a><div class="tl-sub">※彩未は月曜定休。奈央さんリストの雪風・輝風はすすきのエリア。友達との食事をこの夜にするのも◎</div></div></div>
+    <div class="tl-row"><div class="tl-time">20:30</div><div class="tl-what"><b>藻岩山 山頂展望台</b>で夜景(元気があれば)<a class="map" href="https://www.google.com/maps/search/藻岩山ロープウェイ" target="_blank" rel="noopener">地図</a><div class="tl-sub">奈央さんリストより。ロープウェイ上り最終21:30(〜9月は要確認)。DAY 3の夜でもOK</div></div></div>
+  </div>
+</div>
+
+<div class="card daycard" style="--dc:var(--d3);--dcs:var(--d3-soft)">
+  <div class="dayhead">
+    <div class="d-date">DAY 3 — 9/1(火)</div>
+    <div class="d-title">ニセコ → 神威岬 → 小樽 ぐるっと一周</div>
+    <span class="d-stay">泊:札幌</span>
+  </div>
+  <div class="tl">
+    <div class="tl-row"><div class="tl-time">8:00</div><div class="tl-what"><b>札幌出発</b>(国道230号・中山峠ルート)<div class="tl-sub">この日は走行距離が長いので早めスタートが吉</div></div></div>
+    <div class="tl-row"><div class="tl-time">9:30</div><div class="tl-what"><b>きのこ王国 喜茂別店</b>で休憩 <a class="map" href="https://www.google.com/maps/search/きのこ王国+喜茂別店" target="_blank" rel="noopener">地図</a><div class="tl-sub">名物きのこ汁 約¥100。ルート上なので立ち寄りやすい</div></div></div>
+    <div class="tl-row"><div class="tl-time">10:30</div><div class="tl-what"><b>ニセコ HANAZONOリゾート</b> <a class="map" href="https://www.google.com/maps/search/ニセコHANAZONOリゾート" target="_blank" rel="noopener">地図</a><div class="tl-sub">奈央さんメモ「ゴンドラで空のピクニック・ジップライン・ハンモック」⚠ ただしゴンドラは9月平日休止の可能性大。要事前確認&予約(休止なら神仙沼&Olivioランチに切替)</div></div></div>
+    <div class="tl-row"><div class="tl-time">11:45</div><div class="tl-what"><b>神仙沼</b>(ニセコパノラマライン)<a class="map" href="https://www.google.com/maps/search/神仙沼" target="_blank" rel="noopener">地図</a><div class="tl-sub">駐車場から木道で片道約20分。散策込み約1時間・無料</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">13:00</div><div class="tl-what">🚗 岩内経由で積丹へ(約1時間半)。岩内か積丹で海鮮ランチ</div></div>
+    <div class="tl-row"><div class="tl-time">14:45</div><div class="tl-what"><b>神威岬</b> <a class="map" href="https://www.google.com/maps/search/神威岬" target="_blank" rel="noopener">地図</a><div class="tl-sub">先端まで往復約40分。<b>入園は16:30まで</b>・強風時ゲート閉鎖あり(当日に積丹観光協会サイトで確認)</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">16:15</div><div class="tl-what">🚗 国道229号の海岸線を小樽へ(約1時間半)。途中の<b>きのこ王国 仁木店</b>(奈央さんリスト)で休憩も</div></div>
+    <div class="tl-row"><div class="tl-time">17:45</div><div class="tl-what"><b>小樽祝津パノラマ展望台</b>で夕日 <a class="map" href="https://www.google.com/maps/search/祝津パノラマ展望台" target="_blank" rel="noopener">地図</a><div class="tl-sub">無料・24時間。9/1の小樽の日没は18:10頃</div></div></div>
+    <div class="tl-row"><div class="tl-time">18:45</div><div class="tl-what"><b>小樽運河 夜散歩 & 夕食</b><div class="tl-sub">ガス灯の夜景。<b>ルタオ運河プラザ店で「オタルタ」</b>(奈央さんリクエスト・営業時間要確認)、堺町通り・オルゴール堂は閉店が早め(〜18時頃)なので回れたら夕方のうちに。夕食は小樽の寿司・海鮮 or 札幌に戻って友達と</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">20:30</div><div class="tl-what">🚗 札樽道で札幌へ(約45分)</div></div>
+  </div>
+</div>
+
+<div class="card daycard" style="--dc:var(--d4);--dcs:var(--d4-soft)">
+  <div class="dayhead">
+    <div class="d-date">DAY 4 — 9/2(水)</div>
+    <div class="d-title">札幌グルメ → 帰路</div>
+    <span class="d-stay">20:30 CTS発</span>
+  </div>
+  <div class="tl">
+    <div class="tl-row"><div class="tl-time">9:30</div><div class="tl-what"><b>チェックアウト → 円山エリアへ</b><div class="tl-sub">時間があれば北海道神宮・円山公園を散歩</div></div></div>
+    <div class="tl-row"><div class="tl-time">11:00</div><div class="tl-what"><b>回転寿し トリトン 円山店</b>(開店直後が狙い目)<a class="map" href="https://www.google.com/maps/search/回転寿しトリトン+円山店" target="_blank" rel="noopener">地図</a><div class="tl-sub">予約不可。公式LINEで待ち状況を確認できる</div></div></div>
+    <div class="tl-row"><div class="tl-time">12:30</div><div class="tl-what"><b>円山牛乳販売店</b>でクレープ&ソフト <a class="map" href="https://www.google.com/maps/search/円山牛乳販売店" target="_blank" rel="noopener">地図</a><div class="tl-sub">11:00〜18:00・<b>火曜定休なので水曜の今日に</b>。トリトンから徒歩圏</div></div></div>
+    <div class="tl-row"><div class="tl-time">13:30</div><div class="tl-what"><b>札幌市内観光</b><div class="tl-sub">大通公園・時計台・二条市場・白い恋人パークなどお好みで。友達とお茶もこの枠で</div></div></div>
+    <div class="tl-row tl-move"><div class="tl-time">17:00</div><div class="tl-what">🚗 新千歳空港へ(約1時間)。途中で給油</div></div>
+    <div class="tl-row"><div class="tl-time">18:15</div><div class="tl-what"><b>レンタカー返却 → 空港へ</b><div class="tl-sub">お土産&夕食は奈央さんリストの<b>美瑛選果・十勝VALLEYs・どんぶり茶屋</b>(いずれも新千歳空港内)で</div></div></div>
+    <div class="tl-row"><div class="tl-time">20:30</div><div class="tl-what"><b>NH82で羽田へ</b>(22:10着)</div></div>
+  </div>
+</div>
+
+<div class="warn" style="margin-top:14px">
+  <b>ルートの考え方:</b>彼女さんの行きたい候補は「美瑛・富良野」と「ニセコ・積丹・小樽」で方角が逆のため、友人案の登別・洞爺湖/トマム泊は今回見送り。メモの原案(1日目美瑛→2日目札幌→3日目ニセコ・小樽)をそのまま実現できる形にしました。DAY 3の走行が長め(約330km)なので、きつければHANAZONOか神威岬のどちらかを省くとゆとりが出ます。
+</div>
+</section>
+
+<!-- ══════════ プラン5案 ══════════ -->
+<section id="plans">
+<div class="warn" style="margin-top:14px"><b>選び方:</b>3泊4日で「美瑛・富良野」と「ニセコ・積丹」の両方に行くなら運転量は覚悟(A案)。どちらかを諦めるとゆとりが生まれます(B・C案)。友人案ベースの温泉・リゾート重視はD・E案。決まったら「旅程」タブをそのプランに合わせて更新するので教えてください。</div>
+
+<div class="card plancard" style="--pc:var(--accent)">
+  <div class="planhead"><div class="p-name">A案:王道ぜんぶ一周<span class="p-tag">おすすめ</span></div><div class="p-stay">泊:富良野 → 札幌 → 札幌(現在の「旅程」タブ)</div></div>
+  <div class="plan-days">
+    <div class="tl-row"><div class="tl-time">D1</div><div class="tl-what">新千歳 → 富良野。夜ニングルテラス</div></div>
+    <div class="tl-row"><div class="tl-time">D2</div><div class="tl-what">青い池 → 酪農場 → ひつじの丘 → 札幌(夜ラーメン+藻岩山夜景)</div></div>
+    <div class="tl-row"><div class="tl-time">D3</div><div class="tl-what">ニセコ(HANAZONO・神仙沼)→ 神威岬 → 小樽(夕日・運河・オタルタ)</div></div>
+    <div class="tl-row"><div class="tl-time">D4</div><div class="tl-what">円山(トリトン・クレープ)→ 札幌観光 → 空港</div></div>
+  </div>
+  <div class="plan-pm"><span class="pm ok">彼女メモ全網羅</span><span class="pm ok">奈央リスト主要どころ◎</span><span class="pm ng">総走行 約700km・D3が長い</span><span class="pm ng">HANAZONOゴンドラ9/1休止の可能性</span></div>
+</div>
+
+<div class="card plancard" style="--pc:var(--d3)">
+  <div class="planhead"><div class="p-name">B案:ニセコどっぷり西側集中</div><div class="p-stay">泊:ニセコ → 小樽 → 札幌</div></div>
+  <div class="plan-days">
+    <div class="tl-row"><div class="tl-time">D1</div><div class="tl-what">新千歳 → 中山峠(きのこ王国)→ ニセコ泊(Chalet Ivy Weiss候補・夕食ISO)</div></div>
+    <div class="tl-row"><div class="tl-time">D2</div><div class="tl-what">HANAZONO午前(8/31なら月曜・営業要確認)→ 神仙沼 → 神威岬 → 小樽泊(祝津の夕日)</div></div>
+    <div class="tl-row"><div class="tl-time">D3</div><div class="tl-what">青の洞窟クルーズ → 堺町通り・ルタオ・オルゴール堂 → 札幌(夜すすきのラーメン・藻岩山)</div></div>
+    <div class="tl-row"><div class="tl-time">D4</div><div class="tl-what">円山(トリトン・クレープ)→ 空港</div></div>
+  </div>
+  <div class="plan-pm"><span class="pm ok">運転が毎日ほどよく分散</span><span class="pm ok">小樽をじっくり(クルーズも入る)</span><span class="pm ok">ニセコの良い宿に泊まれる</span><span class="pm ng">美瑛・富良野をすべて諦める(青い池・ひつじの丘・ニングルテラス✗)</span></div>
+</div>
+
+<div class="card plancard" style="--pc:var(--d1)">
+  <div class="planhead"><div class="p-name">C案:美瑛じっくり+積丹・小樽(ニセコなし)</div><div class="p-stay">泊:富良野・美瑛(ぽらりす?)→ 札幌 → 札幌</div></div>
+  <div class="plan-days">
+    <div class="tl-row"><div class="tl-time">D1</div><div class="tl-what">新千歳 → 富良野。夜ニングルテラス</div></div>
+    <div class="tl-row"><div class="tl-time">D2</div><div class="tl-what">青い池 → ジェットコースターの路 → ひつじの丘 or だぐらすふぁ〜む → 酪農場 → 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D3</div><div class="tl-what">余市経由 → 神威岬 → 青の洞窟クルーズ or 祝津 → 小樽街歩き → 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D4</div><div class="tl-what">円山(トリトン・クレープ)→ 札幌観光 → 空港</div></div>
+  </div>
+  <div class="plan-pm"><span class="pm ok">美瑛の丘を余裕をもって回れる</span><span class="pm ok">D3が約260kmに収まりクルーズも可</span><span class="pm ng">ニセコ(HANAZONO・神仙沼・ISO)✗</span></div>
+</div>
+
+<div class="card plancard" style="--pc:var(--d4)">
+  <div class="planhead"><div class="p-name">D案:温泉のんびり(友人案①ベース)</div><div class="p-stay">泊:登別温泉 → 札幌 → 札幌</div></div>
+  <div class="plan-days">
+    <div class="tl-row"><div class="tl-time">D1</div><div class="tl-what">新千歳 → 登別(約1時間)。地獄谷散策 → 温泉宿でゆっくり</div></div>
+    <div class="tl-row"><div class="tl-time">D2</div><div class="tl-what">洞爺湖 → 相川ビューポイント(羊蹄山)→ 神仙沼 → 中山峠(きのこ王国)→ 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D3</div><div class="tl-what">神威岬 or 青の洞窟 → 小樽(堺町通り・ルタオ・夕日)→ 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D4</div><div class="tl-what">円山(トリトン・クレープ)→ 空港</div></div>
+  </div>
+  <div class="plan-pm"><span class="pm ok">初日から温泉で疲れが取れる</span><span class="pm ok">運転がいちばん楽</span><span class="pm ok">洞爺湖・登別(奈央リスト)に行ける</span><span class="pm ng">美瑛・富良野✗、HANAZONO✗</span></div>
+</div>
+
+<div class="card plancard" style="--pc:#C2416B">
+  <div class="planhead"><div class="p-name">E案:トマム星野リゾート+美瑛(友人案②ベース)</div><div class="p-stay">泊:トマム ザ・タワー → 札幌 → 札幌</div></div>
+  <div class="plan-days">
+    <div class="tl-row"><div class="tl-time">D1</div><div class="tl-what">新千歳 → トマム(約1時間半)。リゾート内でアクティビティ&ディナー</div></div>
+    <div class="tl-row"><div class="tl-time">D2</div><div class="tl-what">早朝:雲海テラス(運次第!)→ 美瑛(青い池・酪農場)→ ひつじの丘(14:30 LOに注意)→ 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D3</div><div class="tl-what">神威岬+小樽 or ニセコ方面 → 札幌</div></div>
+    <div class="tl-row"><div class="tl-time">D4</div><div class="tl-what">円山(トリトン・クレープ)→ 空港</div></div>
+  </div>
+  <div class="plan-pm"><span class="pm ok">宿の特別感No.1(奈央リストのトマム)</span><span class="pm ok">雲海テラスのチャンス</span><span class="pm ng">ニングルテラスの夜は不可</span><span class="pm ng">D2の予定が詰まる・宿代高め</span></div>
+</div>
+
+<h2>ざっくり比較</h2>
+<div class="card"><div class="tablewrap"><table>
+  <tr><th>案</th><th>泊</th><th>彼女メモ網羅</th><th>運転量</th><th>宿の特別感</th></tr>
+  <tr><td><b>A</b> 王道一周</td><td>富良野/札幌×2</td><td>◎ 全部</td><td>△ 多い</td><td>○</td></tr>
+  <tr><td><b>B</b> 西側集中</td><td>ニセコ/小樽/札幌</td><td>○ 美瑛以外</td><td>◎ 分散</td><td>◎</td></tr>
+  <tr><td><b>C</b> 美瑛+積丹</td><td>富良野/札幌×2</td><td>○ ニセコ以外</td><td>○ ほどよい</td><td>○</td></tr>
+  <tr><td><b>D</b> 温泉</td><td>登別/札幌×2</td><td>△ 西側のみ</td><td>◎ 楽</td><td>◎ 温泉</td></tr>
+  <tr><td><b>E</b> トマム</td><td>トマム/札幌×2</td><td>○ ニセコ次第</td><td>△ 多め</td><td>◎ 星野</td></tr>
+</table></div></div>
+</section>
+
+<!-- ══════════ 確認事項 ══════════ -->
+<section id="todo">
+<h2>2人で決めること</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="t-plan"><input type="checkbox"><div><div class="c-main">プランをA〜Eから決める</div><div class="c-sub">「プラン5案」タブ参照。決まったら旅程タブを更新します</div></div></li>
+  <li class="check" data-k="t-kamui-cave"><input type="checkbox"><div><div class="c-main">神威岬 vs 青の洞窟クルーズの優先順位</div><div class="c-sub">同じ日に両方は時間的に厳しい。クルーズは約80分・要予約</div></div></li>
+  <li class="check" data-k="t-nao-memo"><input type="checkbox"><div><div class="c-main">奈央さんのメモ「9/1 12:30」「9/1 14:00〜15:10 ISO」の意図を確認</div><div class="c-sub">リストに時間メモあり。ISO(ニセコ)を9/1に考えているならD3の順番に関わる</div></div></li>
+  <li class="check" data-k="t-poraris"><input type="checkbox"><div><div class="c-main">「ぽらりす」(★4.9)は宿候補?場所はどこ?</div><div class="c-sub">富良野・美瑛エリアならD1の宿に有力。奈央さんに確認</div></div></li>
+  <li class="check" data-k="t-friend-meal"><input type="checkbox"><div><div class="c-main">友達との食事はいつ・どこ?</div><div class="c-sub">候補:8/31夜(札幌ラーメン)・9/1夜(札幌 or 小樽)・9/2昼〜午後</div></div></li>
+  <li class="check" data-k="t-budget"><input type="checkbox"><div><div class="c-main">宿・食事の予算感をすり合わせ</div><div class="c-sub">B・D・E案は宿代が上がりやすい(Chalet Ivy Weiss/温泉宿/星野)</div></div></li>
+</ul></div>
+
+<h2>予約・営業の確認(旅行前)</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="t-hanazono"><input type="checkbox"><div><div class="c-main">HANAZONOゴンドラ・ジップラインの営業日</div><div class="c-sub">2026年は8/30まで毎日+9月土日祝のみの見込み → 8/31(月)・9/1(火)は休止の可能性大。公式サイトで確認、やるなら予約</div></div></li>
+  <li class="check" data-k="t-ningle"><input type="checkbox"><div><div class="c-main">ニングルテラス 8/30(日)の営業時間</div><div class="c-sub">8月は〜20:45、9月から短縮の年あり。プリンスホテルに確認(0167-22-1111)</div></div></li>
+  <li class="check" data-k="t-moiwa"><input type="checkbox"><div><div class="c-main">藻岩山ロープウェイの上り最終時刻</div><div class="c-sub">通常21:30頃だが季節・点検で変動。夜景に行く日の前に確認</div></div></li>
+  <li class="check" data-k="t-letao"><input type="checkbox"><div><div class="c-main">ルタオ運河プラザ店の営業時間(オタルタ)</div><div class="c-sub">夜まで開いているか確認。閉店が早ければD3の小樽到着を前倒し</div></div></li>
+  <li class="check" data-k="t-cruise"><input type="checkbox"><div><div class="c-main">青の洞窟クルーズの予約(行くなら)</div><div class="c-sub">龍宮クルーズ★4.5・約80分。天候で欠航あり</div></div></li>
+  <li class="check" data-k="t-unknown"><input type="checkbox"><div><div class="c-main">場所・営業が未確認の店を調べる</div><div class="c-sub">ぽらりす/だぐらすふぁ〜む/まぐろセカンド/海銭亭/Olivio(予約制の可能性)/Chalet Ivy Weiss</div></div></li>
+  <li class="check" data-k="t-hotel-parking"><input type="checkbox"><div><div class="c-main">札幌の宿の駐車場(2泊分)</div><div class="c-sub">市内ホテルは駐車場有料・台数制限が多い。事前予約できるか確認</div></div></li>
+</ul></div>
+
+<h2>当日に確認</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="t-gate"><input type="checkbox"><div><div class="c-main">神威岬ゲートの開放状況(行く日の朝)</div><div class="c-sub">積丹観光協会サイト。強風時は先端まで行けない。入園16:30まで</div></div></li>
+  <li class="check" data-k="t-weather2"><input type="checkbox"><div><div class="c-main">天気予報で日程の入れ替え判断</div><div class="c-sub">青い池・神威岬・藻岩山夜景は晴れの日に。ただし彩未=月休・円山牛乳=火休に注意</div></div></li>
+  <li class="check" data-k="t-triton-line"><input type="checkbox"><div><div class="c-main">トリトンの待ち状況(公式LINE)</div><div class="c-sub">開店11:00直後が狙い目。混みすぎならなごやか亭・トリトン豊平店へ切替</div></div></li>
+</ul></div>
+</section>
+
+<!-- ══════════ マップ ══════════ -->
+<section id="map">
+  <h2>北海道 全体マップ</h2>
+  <div class="card mapcard">
+    <div id="mapsvg"></div>
+    <div class="map-toggle">
+      <button id="zoom-all" class="on">北海道全体</button>
+      <button id="zoom-mid">道央ズーム</button>
+    </div>
+  </div>
+  <h2><span class="chip" style="background:var(--accent-soft);color:var(--accent)">1〜12</span>旅程のスポット(タップで地図と連動)</h2>
+  <div class="card maplegend"><ul class="plain" id="pinlist"></ul></div>
+  <h2><span class="chip" style="background:#F7E3EB;color:#C2416B">13〜44</span>奈央さんのリスト「北海道」</h2>
+  <div class="card maplegend"><ul class="plain" id="naolist"></ul></div>
+  <div class="warn" style="margin-top:12px"><b>メモ:</b>ぽらりす(宿)・だぐらすふぁ〜む・まぐろセカンド・Chalet Ivy Weissのピン位置はおおよそです(正確な住所は要確認)。洞爺湖・登別・トマム・旭岳・知床は今回のルート外ですが、位置がわかるようピンにしています。</div>
+</section>
+
+<!-- ══════════ スポット ══════════ -->
+<section id="spots">
+
+<h2><span class="chip" style="background:var(--d1-soft);color:var(--d1)">美瑛・富良野</span></h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="s-aoiike"><input type="checkbox"><div><div class="c-main">青い池</div><div class="c-sub">見学自由・駐車場¥1,000(2026年7月から値上げ)。午前推奨</div></div></li>
+  <li class="check" data-k="s-rakuno"><input type="checkbox"><div><div class="c-main">美瑛放牧酪農場</div><div class="c-sub">10:00〜17:00・無休・入場無料。ソフトクリームが名物</div></div></li>
+  <li class="check" data-k="s-hitsuji"><input type="checkbox"><div><div class="c-main">富良野ジンギスカン ひつじの丘 本店</div><div class="c-sub">11:00〜15:00(LO14:30)昼のみ・予約不可。ミルクラム¥1,375〜</div></div></li>
+  <li class="check" data-k="s-ningle"><input type="checkbox"><div><div class="c-main">ニングルテラス</div><div class="c-sub">8月は〜20:45(9月から短縮の可能性)。夜のライトアップがおすすめ</div></div></li>
+</ul></div>
+
+<h2><span class="chip" style="background:var(--d3-soft);color:var(--d3)">ニセコ・積丹</span></h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="s-hanazono"><input type="checkbox"><div><div class="c-main">ニセコ HANAZONOリゾート</div><div class="c-sub">⚠ ゴンドラは9月平日休止の可能性。ジップライン等は要事前予約・要確認</div></div></li>
+  <li class="check" data-k="s-shinsen"><input type="checkbox"><div><div class="c-main">神仙沼</div><div class="c-sub">木道片道約20分・無料。レストハウス9:00〜17:00</div></div></li>
+  <li class="check" data-k="s-kamui"><input type="checkbox"><div><div class="c-main">神威岬</div><div class="c-sub">8〜10月は8:00〜17:30・入園16:30まで。先端まで往復約40分。強風時閉鎖あり</div></div></li>
+  <li class="check" data-k="s-kinoko"><input type="checkbox"><div><div class="c-main">きのこ王国(喜茂別店)</div><div class="c-sub">中山峠ルート上。きのこ汁約¥100</div></div></li>
+</ul></div>
+
+<h2><span class="chip" style="background:var(--d2-soft);color:var(--d2)">小樽</span></h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="s-shukutsu"><input type="checkbox"><div><div class="c-main">小樽祝津パノラマ展望台</div><div class="c-sub">無料・24時間。夕日の名所。トイレなし(水族館側で)</div></div></li>
+  <li class="check" data-k="s-unga"><input type="checkbox"><div><div class="c-main">小樽運河(夜)</div><div class="c-sub">ガス灯の夜景散歩</div></div></li>
+</ul></div>
+
+<h2><span class="chip" style="background:var(--d4-soft);color:var(--d4)">札幌グルメ</span></h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="s-triton"><input type="checkbox"><div><div class="c-main">回転寿し トリトン 円山店</div><div class="c-sub">11:00〜22:00・予約不可。ピークは40〜60分待ち → 開店直後か14〜16時</div></div></li>
+  <li class="check" data-k="s-maruyama"><input type="checkbox"><div><div class="c-main">円山牛乳販売店(クレープ!)</div><div class="c-sub">11:00〜18:00・<b>火曜定休(9/1は休み→9/2に行く)</b>。テイクアウト専門</div></div></li>
+  <li class="check" data-k="s-sumire"><input type="checkbox"><div><div class="c-main">ラーメン:すみれ 札幌本店</div><div class="c-sub">11:00〜21:00(平日は15〜16時中休み)・無休。王道の味噌</div></div></li>
+  <li class="check" data-k="s-saimi"><input type="checkbox"><div><div class="c-main">ラーメン:麺屋 彩未(行けたら)</div><div class="c-sub"><b>月曜定休(8/31は休み)</b>。昼中心の営業・行列必至</div></div></li>
+  <li class="check" data-k="s-friends"><input type="checkbox"><div><div class="c-main">じょーくんの友達とごはん</div><div class="c-sub">候補:8/31夜(すみれ合流)・9/1夜(札幌に戻って)・9/2昼〜午後。要調整</div></div></li>
+</ul></div>
+</section>
+
+<!-- ══════════ 準備リスト ══════════ -->
+<section id="prep">
+
+<h2>予約・手配(早めに)</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="p-car"><input type="checkbox"><div><div class="c-main">レンタカー予約</div><div class="c-sub">新千歳空港 8/30 14:00頃 〜 9/2 18:00頃返却。ETCカード持参を忘れずに</div></div></li>
+  <li class="check" data-k="p-hotel1"><input type="checkbox"><div><div class="c-main">宿①:富良野 1泊(8/30)</div><div class="c-sub">新富良野プリンス周辺だとニングルテラスが徒歩圏</div></div></li>
+  <li class="check" data-k="p-hotel2"><input type="checkbox"><div><div class="c-main">宿②:札幌 2連泊(8/31・9/1)</div><div class="c-sub">連泊なら荷物を置いたまま動ける。駐車場付きか要確認</div></div></li>
+  <li class="check" data-k="p-hanazono"><input type="checkbox"><div><div class="c-main">HANAZONOアクティビティの営業確認&予約</div><div class="c-sub">9/1(火)はゴンドラ休止の可能性大。ジップライン/ラフティング狙いなら公式サイトで確認</div></div></li>
+  <li class="check" data-k="p-friends"><input type="checkbox"><div><div class="c-main">友達と食事の日程調整</div><div class="c-sub">8/31夜・9/1夜・9/2昼のどれかで打診</div></div></li>
+  <li class="check" data-k="p-ana"><input type="checkbox"><div><div class="c-main">ANAオンラインチェックイン(搭乗24時間前〜)</div><div class="c-sub">往路8/29昼〜、復路9/1夜〜</div></div></li>
+</ul></div>
+
+<h2>持ち物</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="p-license"><input type="checkbox"><div><div class="c-main">運転免許証</div></div></li>
+  <li class="check" data-k="p-etc"><input type="checkbox"><div><div class="c-main">ETCカード</div></div></li>
+  <li class="check" data-k="p-jacket"><input type="checkbox"><div><div class="c-main">薄手の羽織り</div><div class="c-sub">8月末の道内は朝晩15℃前後。神仙沼・神威岬は風が強め</div></div></li>
+  <li class="check" data-k="p-shoes"><input type="checkbox"><div><div class="c-main">歩きやすい靴</div><div class="c-sub">神威岬の遊歩道・神仙沼の木道用</div></div></li>
+  <li class="check" data-k="p-battery"><input type="checkbox"><div><div class="c-main">モバイルバッテリー・車載充電器</div></div></li>
+  <li class="check" data-k="p-camera"><input type="checkbox"><div><div class="c-main">カメラ</div><div class="c-sub">青い池・神威岬・祝津の夕日は撮りどころ</div></div></li>
+  <li class="check" data-k="p-sun"><input type="checkbox"><div><div class="c-main">日焼け止め・サングラス</div></div></li>
+  <li class="check" data-k="p-cash"><input type="checkbox"><div><div class="c-main">小銭・現金</div><div class="c-sub">青い池駐車場・きのこ汁・屋台系は現金が安心</div></div></li>
+</ul></div>
+
+<h2>当日チェック</h2>
+<div class="card"><ul class="plain">
+  <li class="check" data-k="p-kamuigate"><input type="checkbox"><div><div class="c-main">9/1朝:神威岬ゲート開放状況を確認</div><div class="c-sub">積丹観光協会サイト。強風時は先端まで行けない</div></div></li>
+  <li class="check" data-k="p-weather"><input type="checkbox"><div><div class="c-main">各日の天気予報チェック</div><div class="c-sub">青い池は晴天日が◎。DAY 2とDAY 3は天気次第で入れ替え可(ただし彩未・円山牛乳の定休日に注意)</div></div></li>
+  <li class="check" data-k="p-gas"><input type="checkbox"><div><div class="c-main">9/2:返却前の給油</div><div class="c-sub">空港周辺のGSは混むので早めに</div></div></li>
+</ul></div>
+</section>
+
+<!-- ══════════ メモ・注意 ══════════ -->
+<section id="notes">
+
+<h2>要注意ポイント</h2>
+<div class="warn"><b>定休日トラップ:</b>麺屋 彩未は月曜定休(8/31 ✗)、円山牛乳販売店は火曜定休(9/1 ✗)。ラーメンは8/31夜=すみれ、クレープは9/2に。</div>
+<div class="warn"><b>HANAZONOのゴンドラ・主要アクティビティ:</b>2026年は7/4〜8/30毎日+9月は土日祝のみの営業予定。9/1(火)は休止の可能性が高いので、体験したいものがあれば公式サイトで確認・予約を。</div>
+<div class="warn"><b>神威岬:</b>入園は16:30まで。天候(強風)でゲートが閉まる日があるので、当日朝に開放状況を確認してからルートを確定。</div>
+<div class="warn"><b>ひつじの丘・トリトン:</b>どちらも予約不可の人気店。ひつじの丘は開店(11:00)直後、トリトンも開店直後入店が確実。</div>
+
+<h2>移動時間の目安(車)</h2>
+<div class="card"><div class="tablewrap"><table>
+  <tr><th>区間</th><th>時間</th></tr>
+  <tr><td>新千歳空港 → 富良野・美瑛</td><td>約3時間</td></tr>
+  <tr><td>美瑛 → 札幌(三笠IC経由)</td><td>約2時間40分</td></tr>
+  <tr><td>札幌 → ニセコ(中山峠)</td><td>約2時間</td></tr>
+  <tr><td>ニセコ → 神威岬</td><td>約1時間半〜2時間</td></tr>
+  <tr><td>神威岬 → 小樽</td><td>約1時間半</td></tr>
+  <tr><td>小樽 → 札幌(札樽道)</td><td>約45分</td></tr>
+  <tr><td>札幌 → 新千歳空港</td><td>約1時間</td></tr>
+</table></div></div>
+
+<h2>みんなの希望メモ(元ネタ)</h2>
+<div class="card"><div style="padding:14px 16px;font-size:13px;color:var(--sub)">
+  <p style="margin:0 0 8px"><b style="color:var(--ink)">彼女のメモ:</b>美瑛放牧酪農場・ひつじの丘・青い池・ニングルテラス/ニセコHANAZONO・神仙沼/小樽祝津パノラマ展望台/神威岬・きのこ王国 → <b style="color:var(--ink)">全部旅程に反映済み</b></p>
+  <p style="margin:0 0 8px"><b style="color:var(--ink)">LINEの追加:</b>トリトン・札幌ラーメン・円山牛乳販売店のクレープ・友達とごはん → <b style="color:var(--ink)">DAY 2夜/DAY 4に反映済み</b></p>
+  <p style="margin:0 0 8px"><b style="color:var(--ink)">友人アドバイス:</b>登別温泉案/トマム星野リゾート案 → 行きたい候補と方角が合わないため今回は見送り(次回の候補に)</p>
+  <p style="margin:0"><b style="color:var(--ink)">奈央さんのGoogle Mapsリスト「北海道」:</b>全44か所をマップタブにピン表示。ルートに合うもの(藻岩山夜景・ルタオのオタルタ・きのこ王国仁木店・空港グルメなど)は旅程にも反映済み。洞爺湖・登別・トマム・旭岳・知床は今回ルート外</p>
+</div></div>
+
+<p class="src"><b>情報の鮮度について:</b>営業時間・料金は2026年8月時点の調査に基づく目安です。特にHANAZONOの営業日・ニングルテラスの9月営業時間・神威岬のゲート状況は、直前に公式サイトでの確認をおすすめします。チェックの状態はこの端末のブラウザに保存されます(2人で使う場合はそれぞれの端末で別々に保存されます)。</p>
+</section>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('nav button');
+const secs=document.querySelectorAll('section');
+tabs.forEach(b=>b.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.toggle('on',x===b));
+  secs.forEach(s=>s.classList.toggle('on',s.id===b.dataset.tab));
+  window.scrollTo({top:0});
+}));
+const KEY='hokkaido-trip-2026';
+let saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+document.querySelectorAll('.check').forEach(li=>{
+  const k=li.dataset.k, box=li.querySelector('input');
+  if(saved[k]){box.checked=true;li.classList.add('done')}
+  li.addEventListener('click',e=>{
+    if(e.target!==box) box.checked=!box.checked;
+    li.classList.toggle('done',box.checked);
+    saved[k]=box.checked;
+    try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+  });
+});
+
+/* ── 北海道マップ ── */
+// 海岸線(簡略化した緯度経度の列)
+const COAST=[
+[45.52,141.94],[45.33,142.11],[44.94,142.58],[44.58,142.96],[44.35,143.35],
+[44.02,144.27],[43.91,144.67],[43.94,144.83],[44.10,145.10],[44.34,145.34],
+[44.02,145.19],[43.66,145.13],[43.58,145.29],[43.38,145.82],[43.30,145.58],
+[43.03,144.85],[42.97,144.37],[42.60,143.65],[42.28,143.31],[41.92,143.24],
+[42.11,142.93],[42.35,142.35],[42.62,141.60],[42.55,141.35],[42.32,140.97],
+[42.46,140.87],[42.51,140.38],[42.25,140.27],[42.11,140.57],[42.03,140.82],
+[41.80,141.18],[41.75,140.72],[41.43,140.11],[41.87,140.13],[42.44,139.85],
+[42.68,140.16],[42.79,140.23],[42.97,140.51],[43.20,140.35],[43.33,140.34],
+[43.37,140.47],[43.20,140.78],[43.20,141.00],[43.13,141.15],[43.24,141.35],
+[43.40,141.43],[43.57,141.40],[43.85,141.52],[43.94,141.63],[44.36,141.70],
+[44.89,141.75],[45.45,141.64]];
+// 旅のピン(番号順=だいたい訪問順)
+const PINS=[
+ {n:1, name:"新千歳空港", la:42.775,lo:141.692, c:"#7A8A94", sub:"8/30 13:35着 / 9/2 20:30発"},
+ {n:2, name:"ニングルテラス(富良野)", la:43.302,lo:142.382, c:"var(--d1)", sub:"DAY 1 夜・ライトアップ"},
+ {n:3, name:"青い池(美瑛)", la:43.497,lo:142.617, c:"var(--d1)", sub:"DAY 2 朝いちばん"},
+ {n:4, name:"美瑛放牧酪農場", la:43.62,lo:142.44, c:"var(--d1)", sub:"DAY 2・ソフトクリーム"},
+ {n:5, name:"ひつじの丘(中富良野)", la:43.371,lo:142.475, c:"var(--d1)", sub:"DAY 2・ジンギスカンランチ"},
+ {n:6, name:"札幌(トリトン・円山牛乳・すみれ)", la:43.06,lo:141.35, c:"var(--d4)", sub:"DAY 2〜4 拠点・2連泊"},
+ {n:7, name:"きのこ王国 喜茂別店", la:42.795,lo:140.995, c:"var(--d3)", sub:"DAY 3・きのこ汁休憩"},
+ {n:8, name:"ニセコ HANAZONOリゾート", la:42.874,lo:140.740, c:"var(--d3)", sub:"DAY 3・要営業確認"},
+ {n:9, name:"神仙沼", la:42.969,lo:140.616, c:"var(--d3)", sub:"DAY 3・木道さんぽ"},
+ {n:10,name:"神威岬(積丹)", la:43.336,lo:140.346, c:"var(--d3)", sub:"DAY 3・入園16:30まで"},
+ {n:11,name:"祝津パノラマ展望台(小樽)", la:43.243,lo:141.014, c:"var(--d2)", sub:"DAY 3・夕日"},
+ {n:12,name:"小樽運河", la:43.198,lo:141.002, c:"var(--d2)", sub:"DAY 3 夜"}];
+// 奈央さんの保存リスト「北海道」(ピンク)
+const NP="#D5507C";
+const NAO=[
+ {n:13,name:"藻岩山 山頂展望台", la:43.019,lo:141.322, sub:"札幌の夜景 ★4.5 → DAY 2かDAY 3の夜に行けそう"},
+ {n:14,name:"らーめん 信玄 南6条店", la:43.051,lo:141.344, sub:"札幌・すすきの近く ★4.1"},
+ {n:15,name:"なごやか亭 白石本通店", la:43.036,lo:141.405, sub:"札幌・回転寿司 ★4.2"},
+ {n:16,name:"回転寿しトリトン 江別店", la:43.088,lo:141.545, sub:"江別(円山店の方がルート的に便利)"},
+ {n:17,name:"小樽堺町通り商店街", la:43.192,lo:141.006, sub:"小樽・食べ歩き ★4.5 → DAY 3夜と相性◎"},
+ {n:18,name:"かま栄 工場直売店", la:43.198,lo:140.994, sub:"小樽・かまぼこ ★4.2"},
+ {n:19,name:"小樽 ミルク・プラント", la:43.181,lo:140.998, sub:"小樽・巨大ソフトクリーム ★4.3"},
+ {n:20,name:"小樽 青の洞窟 龍宮クルーズ", la:43.215,lo:140.985, sub:"クルーズ約80分・要予約 ★4.5"},
+ {n:21,name:"まぐろセカンド", la:43.17,lo:141.12, sub:"海鮮居酒屋 ¥4,000〜(場所は要確認)"},
+ {n:22,name:"きのこ王国 仁木店", la:43.166,lo:140.752, sub:"余市の隣・仁木町(DAY 3の神威岬→小樽の途中!)"},
+ {n:23,name:"ISO(ニセコ・ひらふ)", la:42.861,lo:140.700, sub:"モダン居酒屋レストラン ★4.3"},
+ {n:24,name:"Olivio(オリヴィオ)", la:42.885,lo:140.755, sub:"ニセコ・イタリアン(位置は要確認)"},
+ {n:25,name:"Chalet Ivy Weiss", la:42.925,lo:140.705, sub:"ニセコ・ワイスの宿(位置は要確認)"},
+ {n:26,name:"相川ビューポイントパーキング", la:42.836,lo:140.826, sub:"羊蹄山の絶景ポイント → DAY 3のルート上"},
+ {n:27,name:"洞爺湖", la:42.615,lo:140.835, sub:"今回ルート外(次回候補)"},
+ {n:28,name:"登別地獄谷", la:42.497,lo:141.148, sub:"今回ルート外(次回候補)"},
+ {n:29,name:"花茶(千歳)", la:42.875,lo:141.615, sub:"農場ジェラート ★4.2 → DAY 4空港へ向かう途中に寄れる"},
+ {n:30,name:"ジェットコースターの路", la:43.435,lo:142.428, sub:"上富良野・アップダウンの一本道 → DAY 2に組込み可"},
+ {n:31,name:"だぐらすふぁ〜む", la:43.47,lo:142.49, sub:"自家製パスタ ★4.3(位置は要確認)"},
+ {n:32,name:"ぽらりす(宿候補)", la:43.58,lo:142.44, sub:"★4.9の宿 → DAY 1富良野・美瑛泊の有力候補?(位置は要確認)"},
+ {n:33,name:"トマム ザ・タワー by 星野リゾート", la:43.065,lo:142.635, sub:"今回ルート外(友人案・次回候補)"},
+ {n:34,name:"旭岳", la:43.664,lo:142.854, sub:"大雪山・今回ルート外(次回候補)"},
+ {n:35,name:"北こぶし知床 ホテル&リゾート", la:44.067,lo:144.983, sub:"知床・今回ルート外(次回候補)"},
+ {n:36,name:"新千歳空港グルメ&土産", la:42.79,lo:141.72, sub:"どんぶり茶屋・美瑛選果・十勝VALLEYs → DAY 4出発前に"},
+ {n:37,name:"麺屋雪風 すすきの本店", la:43.053,lo:141.352, sub:"濃厚味噌ラーメン ★4.0"},
+ {n:38,name:"シハチ鮮魚店 狸COMICHI店", la:43.057,lo:141.350, sub:"海鮮丼 ★4.3・狸小路 → DAY 4昼の選択肢にも"},
+ {n:39,name:"札幌らーめん 輝風 すすきの店", la:43.051,lo:141.356, sub:"ラーメン ★4.1"},
+ {n:40,name:"春一家 三代目 麺宿", la:43.075,lo:141.30, sub:"ラーメン ★4.3(位置は要確認)"},
+ {n:41,name:"回転寿しトリトン 豊平店", la:43.05,lo:141.39, sub:"★4.3・円山店の代替に"},
+ {n:42,name:"海銭亭(かいせんてい)", la:43.19,lo:141.02, sub:"日本料理・海鮮 ★4.3(位置は要確認)"},
+ {n:43,name:"ルタオ運河プラザ店", la:43.198,lo:141.000, sub:"「オタルタ食べたい!」→ DAY 3小樽の夜に"},
+ {n:44,name:"小樽オルゴール堂 本館", la:43.189,lo:141.008, sub:"★4.2・堺町通りの端 → DAY 3夕方に"}];
+const ROUTE=[1,2,3,4,5,6,7,8,9,10,11,12,6,1]; // 訪問順(番号)
+const REFS=[[43.77,142.36,"旭川"],[41.77,140.73,"函館"],[42.92,143.20,"帯広"],[42.98,144.38,"釧路"],[45.42,141.67,"稚内"]];
+const W=1000, LOmin=139.3, LOmax=146.1, LAmin=41.2, LAmax=45.8;
+const KX=W/(LOmax-LOmin), H=Math.round((LAmax-LAmin)/((LOmax-LOmin)*Math.cos(43.5*Math.PI/180))*W);
+const KY=H/(LAmax-LAmin);
+const px=lo=>((lo-LOmin)*KX).toFixed(1), py=la=>((LAmax-la)*KY).toFixed(1);
+const VIEW_ALL=`0 0 ${W} ${H}`;
+// 道央ズーム:神威岬〜美瑛が収まる範囲
+const zx1=+px(139.9), zy1=+py(43.85), zx2=+px(143.0), zy2=+py(42.55);
+const VIEW_MID=`${zx1} ${zy1} ${(zx2-zx1).toFixed(0)} ${(zy2-zy1).toFixed(0)}`;
+let svgStr=`<svg id="hokkaido" viewBox="${VIEW_ALL}" role="img" aria-label="北海道の地図と旅のピン">`;
+svgStr+=`<rect x="0" y="0" width="${W}" height="${H}" fill="var(--sea)" rx="10"/>`;
+svgStr+=`<polygon points="${COAST.map(p=>px(p[1])+','+py(p[0])).join(' ')}" fill="var(--land)" stroke="var(--coast)" stroke-width="2" stroke-linejoin="round"/>`;
+svgStr+=`<polyline points="${ROUTE.map(n=>{const p=PINS.find(q=>q.n===n);return px(p.lo)+','+py(p.la)}).join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="7 6" opacity=".55" stroke-linejoin="round"/>`;
+REFS.forEach(r=>{svgStr+=`<circle cx="${px(r[1])}" cy="${py(r[0])}" r="3.5" fill="var(--sub)" opacity=".5"/><text class="ref-label" x="${+px(r[1])+8}" y="${+py(r[0])+4}">${r[2]}</text>`});
+NAO.forEach(p=>{
+  svgStr+=`<g class="pin-dot" data-n="${p.n}" tabindex="0" role="button" aria-label="${p.name}">`+
+  `<circle class="halo" cx="${px(p.lo)}" cy="${py(p.la)}" r="11" stroke="${NP}"/>`+
+  `<circle cx="${px(p.lo)}" cy="${py(p.la)}" r="9" fill="${NP}" stroke="var(--card)" stroke-width="2"/>`+
+  `<text class="pin-num" style="font-size:9px" x="${px(p.lo)}" y="${+py(p.la)+3.5}">${p.n}</text><title>${p.name}</title></g>`;
+});
+PINS.forEach(p=>{
+  svgStr+=`<g class="pin-dot" data-n="${p.n}" tabindex="0" role="button" aria-label="${p.name}">`+
+  `<circle class="halo" cx="${px(p.lo)}" cy="${py(p.la)}" r="13" stroke="${p.c}"/>`+
+  `<circle cx="${px(p.lo)}" cy="${py(p.la)}" r="11" fill="${p.c}" stroke="var(--card)" stroke-width="2.5"/>`+
+  `<text class="pin-num" x="${px(p.lo)}" y="${+py(p.la)+4}">${p.n}</text><title>${p.name}</title></g>`;
+});
+svgStr+='</svg>';
+document.getElementById('mapsvg').innerHTML=svgStr;
+// ピン一覧
+const li_html=p=>`<li class="check" data-n="${p.n}"><span class="num" style="background:${p.c||NP}">${p.n}</span><div><div class="c-main">${p.name}</div><div class="c-sub">${p.sub}</div></div></li>`;
+document.getElementById('pinlist').innerHTML=PINS.map(li_html).join('');
+document.getElementById('naolist').innerHTML=NAO.map(li_html).join('');
+// 連動ハイライト
+function selectPin(n){
+  document.querySelectorAll('.pin-dot').forEach(g=>g.classList.toggle('sel',g.dataset.n===String(n)));
+  document.querySelectorAll('#pinlist .check, #naolist .check').forEach(li=>li.classList.toggle('sel',li.dataset.n===String(n)));
+}
+document.querySelectorAll('.pin-dot').forEach(g=>{
+  g.addEventListener('click',()=>selectPin(g.dataset.n));
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPin(g.dataset.n)}});
+});
+document.querySelectorAll('#pinlist .check, #naolist .check').forEach(li=>li.addEventListener('click',()=>selectPin(li.dataset.n)));
+// ズーム切替
+const svgEl=()=>document.getElementById('hokkaido');
+const bAll=document.getElementById('zoom-all'), bMid=document.getElementById('zoom-mid');
+bAll.addEventListener('click',()=>{svgEl().setAttribute('viewBox',VIEW_ALL);bAll.classList.add('on');bMid.classList.remove('on')});
+bMid.addEventListener('click',()=>{svgEl().setAttribute('viewBox',VIEW_MID);bMid.classList.add('on');bAll.classList.remove('on')});
+</script>
+
+</body>
+</html>
